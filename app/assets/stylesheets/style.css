@@ -1,0 +1,262 @@
+* {
+  font-family: Arial, sans-serif;
+  color: #1B2C35;
+}
+
+.flash-text {
+  color: #d40000;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.button-link {
+  font: bold 18px Arial;
+  text-decoration: none;
+  background-color: #fafafa;
+  color: #1B2C35;
+  padding: 6px 12px 6px 12px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 5px;
+}
+
+.button-link:hover {
+  color: #bbf7bd;
+}
+
+.category-list {
+  font-size: 1.2em;
+}
+
+.category-list a:hover {
+  color: #389639;
+}
+
+.center-button {
+  width: 50%;
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
+
+.float-right {
+  float: right;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.monthly-table {
+  min-width: 70%;
+}
+
+.right-justify {
+  text-align: right;
+}
+
+.show-all-link {
+  font-size: 0.9em;
+}
+
+.summary-container {
+  width: 80%;
+}
+
+.welcome-container {
+  width: 90%;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.welcome-button {
+  display: inline-block;
+  width: 80px;
+  padding: 10px 12px 10px 12px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  background-image: url("/images/calc3.png");
+  background-color: #F2F2F2;
+  background-repeat: no-repeat;
+}
+
+footer {
+  background-color: #3A96CE;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}
+
+footer a:link {
+  color: white;
+}
+
+footer a:visited {
+  color: white;
+}
+
+footer a:hover {
+  color: #fafafa;
+}
+
+footer p {
+  text-align: center;
+  font-size: 10px;
+  color: #FFF;
+}
+
+h1 {
+  color: #1B2C35;
+}
+
+label {
+  vertical-align: bottom;
+}
+
+li {
+  list-style-type: none;
+}
+
+main {
+  margin: auto;
+  min-height: 400px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 90%;
+}
+
+/**** Navbar ****/
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #3A96CE;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+}
+
+nav a:hover {
+  color: #fafafa;
+  background-color: #37779E;
+}
+
+nav a:visited {
+  color: white;
+}
+
+.responsive-menu {
+  display: none;
+}
+
+.responsive-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.responsive-menu li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+}
+
+.responsive-menu a {
+  padding: 10px 12px;
+}
+
+
+@media only screen and (min-width:530px) {
+
+  .responsive-menu {
+    display: block !important;
+  }
+
+  .responsive-menu li {
+    float: left;
+  }
+
+  .responsive-menu li.logout-button {
+    float: right;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .responsive-menu.expand {
+    display: block;
+  }
+
+  .responsive-menu.expand li {
+    display: block;
+    width: 100%;
+  }
+  .responsive-menu.expand a {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width:960px) {
+  main {
+    width: 90%;
+  }
+}
+
+/* Small screen settings */
+@media only screen and (max-width:480px) {
+  main {
+    font-size: 125%;
+  }
+
+  .monthly-table {
+    width: 100%;
+  }
+
+  .summary-container {
+    width: 100%;
+  }
+
+  .table-title {
+    width: 100%;
+  }
+
+  a.button-link {
+    width: 100px;
+    font-size: 120%;
+  }
+}
