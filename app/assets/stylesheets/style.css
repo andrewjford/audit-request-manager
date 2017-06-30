@@ -28,14 +28,6 @@
   color: #bbf7bd;
 }
 
-.category-list {
-  font-size: 1.2em;
-}
-
-.category-list a:hover {
-  color: #389639;
-}
-
 .center-button {
   width: 50%;
   text-align: center;
@@ -94,6 +86,10 @@ a:link {
   text-decoration: none;
 }
 
+a:visited {
+  color: #1B2C35;
+}
+
 body {
   margin: 0;
   background-color: #F2F2F2;
@@ -143,6 +139,10 @@ main {
   padding-top: 40px;
   padding-bottom: 40px;
   width: 90%;
+}
+
+ul {
+  padding-left: 0;
 }
 
 /**** Navbar ****/
