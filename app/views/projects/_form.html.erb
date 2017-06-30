@@ -21,10 +21,12 @@
     <%= form.text_field :auditee, id: :project_auditee %>
   </div>
 
+  <h3>Users</h3>
   <div class="field">
-    <%= form.label :users %>
     <%= form.collection_check_boxes :user_ids, project.users, :id, :email %>
+  </div>
 
+  <div>
     <%= form.label :add_user, "Add User" %>
     <input type="text" name="project[user_attributes][0][email]"
       id="project_user_attributes_0_email">
