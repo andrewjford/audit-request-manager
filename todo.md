@@ -1,0 +1,6 @@
+- migrations
+- models - associations
+- basic login
+- controller/views
+- full login
+- css/design
