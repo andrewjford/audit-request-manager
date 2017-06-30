@@ -25,8 +25,9 @@
     <%= form.label :users %>
     <%= form.collection_check_boxes :user_ids, project.users, :id, :email %>
 
-    <%= form.label :add_user %>
-    <%= form.text_field :add_user %>
+    <%= form.label :add_user, "Add User" %>
+    <input type="text" name="project[user_attributes][0][email]"
+      id="project_user_attributes_0_email">
   </div>
 
   <div class="actions">

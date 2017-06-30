@@ -5,10 +5,13 @@ class Project < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
 
-  def add_user=(email_string)
-    user = User.find_by(email:email_string)
-    if user
-      self.users << user
+  def user_attributes=(user_attributes)
+    user_attributes.values.each do |user_attribute|
+      user = User.find_by(email: user_attribute[:email])
+      if user
+        self.users << user unless self.users.include?(user)
+      end
     end
   end
+
 end
