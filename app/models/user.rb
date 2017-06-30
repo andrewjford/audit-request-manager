@@ -9,4 +9,9 @@ class User < ApplicationRecord
   belongs_to :organization
 
   accepts_nested_attributes_for :organization
+  validates :organization, presence: true
+
+  # def organization_attributes=(org_params)
+  #   self.organization.build()
+  # end
 end
