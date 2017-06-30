@@ -16,6 +16,19 @@
     <%= form.text_field :title, id: :project_title %>
   </div>
 
+  <div class="field">
+    <%= form.label :auditee, "Client" %>
+    <%= form.text_field :auditee, id: :project_auditee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :users %>
+    <%= form.collection_check_boxes :user_ids, project.users, :id, :email %>
+
+    <%= form.label :add_user %>
+    <%= form.text_field :add_user %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

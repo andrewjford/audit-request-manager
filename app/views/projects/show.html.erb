@@ -1,8 +1,14 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Title:</strong>
+  <strong>Project:</strong>
   <%= @project.title %>
+</p>
+<p>
+  <strong>Client:</strong>
+  <%= @project.auditee %>
+</p>
+<p>Users: <% @project.users.each do |user| %>
+    <%= user.email %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
