@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :projects, through: :user_projects
   belongs_to :organization
 
-  accepts_nested_attributes_for :organization
-  validates :organization, presence: true
+  # validates :organization, presence: true
 
-  # def organization_attributes=(org_params)
-  #   self.organization.build()
-  # end
+  def organization_attributes=(org_attributes)
+    self.organization = Organization.find_or_create_by(name: org_attributes[:name])
+  end
+
 end
