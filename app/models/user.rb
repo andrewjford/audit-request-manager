@@ -14,4 +14,8 @@ class User < ApplicationRecord
     self.organization = Organization.find_or_create_by(name: org_attributes[:name])
   end
 
+  def organization_name
+    self.organization.name
+  end
+
 end
