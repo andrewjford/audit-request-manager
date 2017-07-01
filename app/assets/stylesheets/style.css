@@ -67,15 +67,6 @@
   min-width: 70%;
 }
 
-.request-list li {
-  background-color: #F7FCFF;
-  padding: 8px 4px;
-  border: 2px;
-  border-color: #3A96CE;
-  border-style: solid;
-  margin-bottom: -2px;
-}
-
 .right-justify {
   text-align: right;
 }
@@ -177,6 +168,28 @@ main {
 
 ul {
   padding-left: 0;
+}
+
+/**TABLE***/
+
+.request-list tr {
+  background-color: #F7FCFF;
+  padding: 8px 4px;
+  border: 2px;
+  border-color: #3A96CE;
+  border-style: solid;
+}
+
+table {
+  min-width: 410px;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 2px 7px;
 }
 
 /**** Navbar ****/

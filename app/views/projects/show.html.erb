@@ -11,20 +11,32 @@
   <%= link_to 'Edit', edit_project_path(@project) %>
 </p>
 
+<%= link_to 'All Requests', new_project_request_path(@project),
+  class:"button-link button-in-site" %>
+<%= link_to 'Open Requests', new_project_request_path(@project),
+  class:"button-link button-in-site" %>
+<%= link_to 'Client Submitted', new_project_request_path(@project),
+  class:"button-link button-in-site" %>
+
 <h2>Audit Requests</h2>
 
 <div class="request-list">
-  <ul>
+  <table>
     <% @project.requests.each do |request| %>
-      <li>
-        <div class="numbering">
-          <%= request.request_number %>.
-        </div>
-        <%= link_to request.title, project_request_path(@project, request) %>
-        - <%= request.description %>
-      </li>
+      <tr>
+        <td class="numbering">
+          <%= request.request_number %>
+        </td>
+        <td class="status">
+          <%= request.status %>
+        </td>
+        <td class="request-info">
+          <%= link_to request.title, project_request_path(@project, request) %>
+          - <%= request.description %>
+        </td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 </div>
 
 <div class="below-list">
