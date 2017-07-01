@@ -1,4 +1,4 @@
-<h1>Welcome!</h1>
+<h1><%= @user.name %></h1>
 
 <div class="user-description">
   Email: <%= @user.email %>
@@ -6,12 +6,4 @@
   Organization: <%= @user.organization_name %>
 </div>
 
-<br>
-<div class="user-projects">
-  My Projects:
-  <ul>
-    <% @user.projects.each do |project| %>
-      <li><%= link_to "#{project.title}", project_path(project) %></li>
-    <% end %>
-  </ul>
-</div>
+<%= link_to "edit", edit_registration_path(@user) if @user == current_user %>

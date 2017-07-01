@@ -10,11 +10,20 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def update
+    super
+  end
+
   private
 
   def sign_up_params
     params.require(resource_name).permit(:email, :password,
-      :password_confirmation, organization_attributes: [:name])
+      :password_confirmation, :name, organization_attributes: [:name])
+  end
+
+  def account_update_params
+    params.require(resource_name).permit(:email, :password, :name,
+      :password_confirmation, :current_password, organization_attributes: [:name])
   end
 
 end

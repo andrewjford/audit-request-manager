@@ -1,0 +1,15 @@
+<h1>Welcome <%= @user.name %>!</h1>
+
+<div class="user-description">
+  Organization: <%= @user.organization_name %>
+</div>
+
+<br>
+<div class="user-projects">
+  My Projects:
+  <ul>
+    <% @user.projects.each do |project| %>
+      <li><%= link_to "#{project.title}", project_path(project) %></li>
+    <% end %>
+  </ul>
+</div>
