@@ -174,10 +174,24 @@ ul {
 
 .request-list tr {
   background-color: #F7FCFF;
-  padding: 8px 4px;
   border: 2px;
   border-color: #3A96CE;
   border-style: solid;
+}
+
+.request-info a {
+  width: 100%;
+  display: block;
+}
+
+.status-open {
+  background-color: #87EDB9;
+}
+.status-sub {
+  background-color: #FFE292;
+}
+.status-closed {
+  background-color: #FFAC92;
 }
 
 table {
@@ -188,8 +202,13 @@ table, th, td {
   border-collapse: collapse;
 }
 
+table a {
+  text-decoration: none;
+}
+
 td {
-  padding: 2px 7px;
+  padding: 6px 7px;
+  font-size: 1.1em;
 }
 
 /**** Navbar ****/
