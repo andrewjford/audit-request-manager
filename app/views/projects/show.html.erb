@@ -4,7 +4,7 @@
   <%= @project.auditee %>
 </p>
 <p><strong>Contributors: </strong><% @project.users.each do |user| %>
-    <%= link_to "#{user.email}", user_path(user) %>
+    <%= link_to "#{user.name}", user_path(user) %>
   <% end %>
 </p>
 <%= link_to 'Edit', edit_project_path(@project) %> |
