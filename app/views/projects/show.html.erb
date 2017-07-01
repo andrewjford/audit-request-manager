@@ -3,10 +3,21 @@
   <strong>Client:</strong>
   <%= @project.auditee %>
 </p>
-<p>Contributors: <% @project.users.each do |user| %>
+<p><strong>Contributors: </strong><% @project.users.each do |user| %>
     <%= link_to "#{user.email}", user_path(user) %>
   <% end %>
 </p>
-
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+
+<h2>Audit Requests</h2>
+
+<div class="request-list">
+  <ul>
+    <% @project.requests.each do |request| %>
+      <li><%= request.title %></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to 'New Request', new_project_request_path(@project) %>

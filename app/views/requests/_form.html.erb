@@ -1,0 +1,30 @@
+<%= form_for [project, request] do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :request_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "Notes" %>
+    <%= form.text_area :description, id: :request_description %>
+  </div>
+
+  <input type="hidden" name="request[user_id]" value=<%= current_user.id %>>
+  <input type="hidden" name="request[project_id]" value=<%= project.id %>>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -2,6 +2,7 @@ class Project < ApplicationRecord
   has_many :user_projects
   has_many :users, through: :user_projects
   has_many :organizations, through: :users
+  has_many :requests
 
   validates :title, presence: true, uniqueness: true
 
