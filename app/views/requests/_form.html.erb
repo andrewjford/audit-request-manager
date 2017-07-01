@@ -23,6 +23,7 @@
 
   <input type="hidden" name="request[user_id]" value=<%= current_user.id %>>
   <input type="hidden" name="request[project_id]" value=<%= project.id %>>
+  <input type="hidden" name="request[status]" value="Open">
 
   <div class="actions">
     <%= form.submit %>
