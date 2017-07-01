@@ -7,15 +7,20 @@
   color: #d40000;
 }
 
+.below-list {
+  margin: 1.1em 0;
+}
+
 .bolded {
   font-weight: bold;
 }
 
 .button-link {
-  font: bold 18px Arial;
+  font-size: 1.4em;
+  font-weight: bold;
   text-decoration: none;
-  background-color: #fafafa;
-  color: #1B2C35;
+  background-color: #07649B;
+  color: #F7FCFF;
   padding: 6px 12px 6px 12px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #CCCCCC;
@@ -25,7 +30,11 @@
 }
 
 .button-link:hover {
-  color: #3A96CE;
+  background-color: #1983C1;
+}
+
+.button-in-site {
+  font-size: 1em;
 }
 
 .center-button {
@@ -110,10 +119,6 @@
   padding: 10px 12px 10px 12px;
 }
 
-a:visited {
-  color: #05334F;
-}
-
 body {
   margin: 0;
   background-color: #F7FCFF;
@@ -148,6 +153,10 @@ footer p {
 
 h1, h2, h3 {
   color: #07649B;
+}
+
+input[type="text"], textarea {
+  background-color: white;
 }
 
 label {

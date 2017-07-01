@@ -15,4 +15,12 @@ class Project < ApplicationRecord
     end
   end
 
+  def requests_count
+    self.requests.count
+  end
+
+  def next_request_number
+    requests_count + 1
+  end
+
 end

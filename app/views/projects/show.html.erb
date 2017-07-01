@@ -17,7 +17,9 @@
   <ul>
     <% @project.requests.each do |request| %>
       <li>
-        <%= request.id %>)
+        <div class="numbering">
+          <%= request.request_number %>.
+        </div>
         <%= link_to request.title, project_request_path(@project, request) %>
         - <%= request.description %>
       </li>
@@ -25,4 +27,7 @@
   </ul>
 </div>
 
-<%= link_to 'New Request', new_project_request_path(@project) %>
+<div class="below-list">
+  <%= link_to 'New Request', new_project_request_path(@project),
+    class:"button-link button-in-site" %>
+</div>

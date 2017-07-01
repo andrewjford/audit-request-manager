@@ -22,7 +22,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :description,:status, :user_id,
-      :project_id)
+    params.require(:request).permit(:title, :description,:status, :request_number,
+      :user_id, :project_id)
   end
 end
