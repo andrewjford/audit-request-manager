@@ -6,7 +6,7 @@
 
 <br>
 <div class="user-projects">
-  My Projects:
+  Your Projects:
   <ul>
     <% @user.projects.each do |project| %>
       <li><%= link_to "#{project.title}", project_path(project) %></li>
