@@ -1,12 +1,17 @@
 <h1>Welcome!</h1>
 
-Email: <%= @user.email %>
+<div class="user-description">
+  Email: <%= @user.email %>
+  <br>
+  Organization: <%= @user.organization_name %>
+</div>
+
 <br>
-Organization: <%= @user.organization_name %>
-<br>
-My Projects:
-<ul>
-  <% @user.projects.each do |project| %>
-    <li><%= link_to "#{project.title}", project_path(project) %></li>
-  <% end %>
-</ul>
+<div class="user-projects">
+  My Projects:
+  <ul>
+    <% @user.projects.each do |project| %>
+      <li><%= link_to "#{project.title}", project_path(project) %></li>
+    <% end %>
+  </ul>
+</div>

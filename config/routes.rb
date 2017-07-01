@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
 
   root 'welcome#index'
-  get '/dashboard', to: 'users#show'
+  get '/dashboard', to: 'welcome#dashboard'
 end

@@ -1,12 +1,9 @@
-<p>
-  <strong>Project:</strong>
-  <%= @project.title %>
-</p>
+<h1><%= @project.title %></h1>
 <p>
   <strong>Client:</strong>
   <%= @project.auditee %>
 </p>
-<p>Users: <% @project.users.each do |user| %>
+<p>Contributors: <% @project.users.each do |user| %>
     <%= user.email %>
   <% end %>
 </p>
