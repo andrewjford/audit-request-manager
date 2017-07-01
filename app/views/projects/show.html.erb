@@ -2,13 +2,14 @@
 <p>
   <strong>Client:</strong>
   <%= @project.auditee %>
-</p>
-<p><strong>Contributors: </strong><% @project.users.each do |user| %>
+  <br>
+  <strong>Contributors: </strong>
+  <% @project.users.each do |user| %>
     <%= link_to "#{user.name}", user_path(user) %>
   <% end %>
+  <br>
+  <%= link_to 'Edit', edit_project_path(@project) %>
 </p>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
 
 <h2>Audit Requests</h2>
 
@@ -16,6 +17,7 @@
   <ul>
     <% @project.requests.each do |request| %>
       <li>
+        <%= request.id %>)
         <%= link_to request.title, project_request_path(@project, request) %>
         - <%= request.description %>
       </li>
