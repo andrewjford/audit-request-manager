@@ -15,7 +15,10 @@
 <div class="request-list">
   <ul>
     <% @project.requests.each do |request| %>
-      <li><%= request.title %></li>
+      <li>
+        <%= link_to request.title, project_request_path(@project, request) %>
+        - <%= request.description %>
+      </li>
     <% end %>
   </ul>
 </div>

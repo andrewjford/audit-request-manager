@@ -15,6 +15,10 @@ class RequestsController < ApplicationController
     end
   end
 
+  def show
+    @request = Request.find(params[:id])
+  end
+
   private
 
   def request_params
