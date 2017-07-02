@@ -59,6 +59,10 @@
   float: right;
 }
 
+.form-button {
+  display: inline;
+}
+
 .inline {
   display: inline-block;
 }
