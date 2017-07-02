@@ -23,13 +23,13 @@
 
   <h3>Contributors</h3>
   <div class="field">
-    <%= form.collection_check_boxes :user_ids, project.users, :id, :email %>
+    <%= form.collection_check_boxes :user_ids, project.users, :id, :name %>
   </div>
 
   <div>
     <%= form.label :add_user, "Add Contributor" %>
     <input type="text" name="project[user_attributes][0][email]"
-      id="project_user_attributes_0_email">
+      id="project_user_attributes_0_email" placeholder="ie. user email">
   </div>
 
   <div class="actions">
