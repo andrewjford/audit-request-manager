@@ -7,6 +7,8 @@ end
 
 # Devise for handling user authentication
 gem 'devise'
+# Use for facebook Omniauth login
+gem 'omniauth-facebook'
 # To prevent error
 gem "rb-fsevent", "0.9.8"
 # Use FontAwesome for icons

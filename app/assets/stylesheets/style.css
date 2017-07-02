@@ -270,9 +270,18 @@ nav a {
   text-decoration: none;
 }
 
+nav .nav-container {
+  width: 90%;
+  margin: auto;
+}
+
 nav a:hover {
   color: #fafafa;
   background-color: #1B75AB;
+}
+
+#navbar-logout {
+  float: right;
 }
 
 .responsive-menu {
