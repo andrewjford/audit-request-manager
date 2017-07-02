@@ -9,6 +9,8 @@ end
 gem 'devise'
 # Use for facebook Omniauth login
 gem 'omniauth-facebook'
+# Use DotEnv to manage ENV for OmniAuth keys
+gem 'dotenv-rails'
 # To prevent error
 gem "rb-fsevent", "0.9.8"
 # Use FontAwesome for icons

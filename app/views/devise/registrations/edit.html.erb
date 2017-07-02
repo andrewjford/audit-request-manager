@@ -36,6 +36,13 @@
     <%= f.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= f.fields_for :organization do |org_form| %>
+      <%= org_form.label :name, "Organization Name" %><br>
+      <%= org_form.text_field :name %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

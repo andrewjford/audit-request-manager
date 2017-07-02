@@ -17,10 +17,9 @@
 
 .button-link {
   font-size: 1.4em;
-  font-weight: bold;
   text-decoration: none;
   background-color: #07649B;
-  color: #F7FCFF;
+  color: #feffff;
   padding: 6px 12px 6px 12px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #CCCCCC;
@@ -113,7 +112,6 @@
 }
 
 .user-projects li {
-  background-color: #F7FCFF;
   padding: 16px 4px;
   border: 0.25em;
   border-color: #3A96CE;
@@ -149,7 +147,7 @@
 
 body {
   margin: 0;
-  background-color: #F7FCFF;
+  background-color: #feffff;
   background-repeat: no-repeat;
 }
 
@@ -210,7 +208,6 @@ ul {
 /**TABLE***/
 
 .request-list tr {
-  background-color: #F7FCFF;
   border: 2px;
   border-color: #3A96CE;
   border-style: solid;
