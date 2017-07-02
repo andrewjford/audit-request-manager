@@ -6,4 +6,8 @@ class Request < ApplicationRecord
   def description_trunc
     description.size > 200 ? description[0..196]+"..." : description
   end
+
+  def comment_count
+    self.comments.size
+  end
 end

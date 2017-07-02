@@ -4,7 +4,9 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to project_request_path(params[:project_id],params[:request_id])
     else
-      render "request#show"
+      @request = Request.find(params[:request_id])
+      flash[:error] = "New comment must have content."
+      render :template => "requests/show"
     end
   end
 

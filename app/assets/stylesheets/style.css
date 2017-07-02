@@ -92,6 +92,10 @@
   width: 80%;
 }
 
+.table-icon-row {
+  width: 40px;
+}
+
 .user-projects li {
   background-color: #F7FCFF;
   padding: 16px 4px;
@@ -121,6 +125,10 @@
   display: inline-block;
   width: 80px;
   padding: 10px 12px 10px 12px;
+}
+
+#flash_error, #flash_notice, #flash_alert {
+  color: #d60000;
 }
 
 body {

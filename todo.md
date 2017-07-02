@@ -1,4 +1,4 @@
-
+- add comment form failure should display flash message
 
 - migrations
 - models - associations
