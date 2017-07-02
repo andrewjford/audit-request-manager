@@ -19,9 +19,9 @@
   <ul>
     <% @request.comments.each do |comment| %>
       <li>
-        <div class="li-comment"><%= comment.content %></div>
+        <div class="li-comment"><%= comment.author %>: <%= comment.content %></div>
 
-        <i>Posted by <%= comment.author %> on <%= comment.post_date %></i>
+        <i>Posted on <%= comment.post_date %></i>
 
       </li>
     <% end %>

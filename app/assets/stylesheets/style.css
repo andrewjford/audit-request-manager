@@ -76,12 +76,16 @@
   padding: 8px;
   background-color: #e2eff7;
   margin-top: 8px;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .request-comments i {
   font-size: 0.9em;
   margin-left: 8px;
+}
+
+.request-comments li {
+  margin-bottom: 12px;
 }
 
 .request-show-description {
