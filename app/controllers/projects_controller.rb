@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    set_request_list(params, @project)
   end
 
   # GET /projects/new
@@ -71,5 +72,19 @@ class ProjectsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:title,:auditee,user_ids:[],user_attributes: [:email])
+    end
+
+    def set_request_list(params,project)
+      if !params[:status_code]
+        @requests = project.requests
+      elsif params[:status_code] == "open"
+        @requests = project.requests.where(status: 'Open')
+      elsif params[:status_code] == "client_submitted"
+        @requests = project.requests.where(status: 'Client Submitted')
+      elsif params[:status_code] == "closed"
+        @requests = project.requests.where(status: 'Closed')
+      else
+        @requests = project.requests
+      end
     end
 end

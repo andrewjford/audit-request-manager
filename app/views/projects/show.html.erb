@@ -11,43 +11,20 @@
   <%= link_to 'Edit', edit_project_path(@project) %>
 </p>
 
-<%= link_to 'All Requests', new_project_request_path(@project),
+<%= link_to 'All Requests', "/projects/#{@project.id}",
   class:"button-link button-in-site" %>
-<%= link_to 'Open Requests', new_project_request_path(@project),
+<%= link_to 'Open Requests', "/projects/#{@project.id}/status/open",
   class:"button-link button-in-site" %>
-<%= link_to 'Client Submitted', new_project_request_path(@project),
+<%= link_to 'Client Submitted', "/projects/#{@project.id}/status/client_submitted",
+  class:"button-link button-in-site" %>
+<%= link_to 'Closed', "/projects/#{@project.id}/status/closed",
   class:"button-link button-in-site" %>
 
 <h2>Audit Requests</h2>
 
 <div class="request-list">
   <table>
-    <% @project.requests.each do |request| %>
-      <tr>
-        <td class="numbering">
-          <%= request.request_number %>
-        </td>
-        <% if request.status == "Open" %>
-          <%= content_tag(:td, request.status, class: "status-open") %>
-        <% elsif request.status == "Client Submitted" %>
-          <%= content_tag(:td, request.status, class: "status-sub") %>
-        <% elsif request.status == "Closed" %>
-          <%= content_tag(:td, request.status, class: "status-closed") %>
-        <% else %>
-          <%= content_tag(:td, request.status) %>
-        <% end %>
-        <td class="request-info">
-          <%= link_to "#{request.title} - #{request.description_trunc}",
-           project_request_path(@project, request) %>
-        </td>
-        <td class="table-icon-row">
-          <i class="fa fa-cloud-upload"> 0</i>
-        </td>
-        <td class="table-icon-row">
-          <i class="fa fa-comments"> <%= request.comment_count %></i>
-        </td>
-      </tr>
-    <% end %>
+    <%= render @requests %>
   </table>
 </div>
 

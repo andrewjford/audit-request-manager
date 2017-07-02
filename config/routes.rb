@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/projects/:id/status/:status_code', to: 'projects#show'
+
   resources :projects do
     resources :requests do
       resources :comments, only: [:new, :create, :edit, :update, :destroy]
