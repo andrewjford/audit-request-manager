@@ -3,8 +3,8 @@
   color: #05334F;
 }
 
-.flash-text {
-  color: #d40000;
+.actions {
+  margin-bottom: 8px;
 }
 
 .below-list {
@@ -56,6 +56,10 @@
   line-height: 0;
 }
 
+.field {
+  margin-bottom: 10px;
+}
+
 .float-right {
   float: right;
 }
@@ -78,6 +82,10 @@
 
 .show-all-link {
   font-size: 0.9em;
+}
+
+.small-link {
+  font-size: 0.8em;
 }
 
 .summary-container {
