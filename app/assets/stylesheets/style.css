@@ -72,6 +72,18 @@
   display: inline-block;
 }
 
+.li-comment {
+  padding: 8px;
+  background-color: #e2eff7;
+  margin-top: 8px;
+  border-radius: 6px;
+}
+
+.request-comments i {
+  font-size: 0.9em;
+  margin-left: 8px;
+}
+
 .request-show-description {
   width: 80%;
 }
@@ -93,7 +105,7 @@
 }
 
 .table-icon-row {
-  width: 40px;
+  width: 44px;
 }
 
 .user-projects li {

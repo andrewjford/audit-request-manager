@@ -18,7 +18,12 @@
 <div class="request-comments">
   <ul>
     <% @request.comments.each do |comment| %>
-      <li><%= comment.author %> - <%= comment.content %></li>
+      <li>
+        <div class="li-comment"><%= comment.content %></div>
+
+        <i>Posted by <%= comment.author %> on <%= comment.post_date %></i>
+
+      </li>
     <% end %>
   </ul>
 </div>
