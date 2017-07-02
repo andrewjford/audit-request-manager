@@ -67,10 +67,6 @@
   display: inline-block;
 }
 
-.monthly-table {
-  min-width: 70%;
-}
-
 .request-show-description {
   width: 80%;
 }
@@ -203,7 +199,7 @@ ul {
 }
 
 table {
-  min-width: 410px;
+  min-width: 400px;
 }
 
 table, th, td {
@@ -244,10 +240,6 @@ nav a {
 nav a:hover {
   color: #fafafa;
   background-color: #1B75AB;
-}
-
-nav a:visited {
-  color: white;
 }
 
 .responsive-menu {
@@ -317,15 +309,7 @@ nav a:visited {
     font-size: 125%;
   }
 
-  .monthly-table {
-    width: 100%;
-  }
-
   .summary-container {
-    width: 100%;
-  }
-
-  .table-title {
     width: 100%;
   }
 
