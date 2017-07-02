@@ -1,5 +1,19 @@
-<p>Request: <%= @request.title %> - <%= @request.description %></p>
-<p>Opened by: <%= @request.user.name %></p>
-<p>Project: <%= @request.project.title %></p>
-<p>Status: <%= @request.status %></p>
-<%= link_to "back", project_path(params[:project_id]) %>
+<h3>#<%= @request.request_number %>. <%= @request.title %> </h3>
+
+<p class="request-show-description"><%= @request.description %></p>
+
+<hr>
+
+<p>Opened by: <%= link_to @request.user.name, user_path(@request.user) %><br>
+Project: <%= link_to @request.project.title, project_path(@request.project) %><br>
+Status: <%= @request.status %></p>
+
+<%= link_to 'Upload File', root_path,
+  class:"button-link button-in-site" %>
+<%= link_to 'Close Request', root_path,
+  class:"button-link button-in-site" %>
+<%= link_to 'Add Comment', root_path,
+  class:"button-link button-in-site" %>
+
+<br><br>
+<%= link_to "back", project_path(@request.project) %>
