@@ -1,13 +1,23 @@
 <h3>#<%= @request.request_number %>. <%= @request.title %> </h3>
 
-<p class="request-show-description"><%= @request.description %></p>
+<p>
+  Project: <%= link_to @request.project.title, project_path(@request.project) %>
+  <br>
+  Opened by: <%= link_to @request.user.name, user_path(@request.user) %>
+  <br>
+  Opened on: <%= @request.created_at.strftime("%m/%d/%Y") %>
+  <br>
+  Status: <%= @request.status %>
+</p>
 
 <hr>
+<p class="request-show-description"><%= @request.description %></p>
 
-<p>Opened by: <%= link_to @request.user.name, user_path(@request.user) %><br>
-Project: <%= link_to @request.project.title, project_path(@request.project) %><br>
-Status: <%= @request.status %></p>
+<h4>Comments</h4>
 
+<div class="request-comments">
+
+</div>
 
 <%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
   method: :patch, class: "form-button" do %>
