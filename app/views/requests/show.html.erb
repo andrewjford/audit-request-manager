@@ -16,7 +16,11 @@
 <h4>Comments</h4>
 
 <div class="request-comments">
-
+  <ul>
+    <% @request.comments.each do |comment| %>
+      <li><%= comment.author %> - <%= comment.content %></li>
+    <% end %>
+  </ul>
 </div>
 
 <div class="inline-forms">

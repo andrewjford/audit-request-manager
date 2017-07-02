@@ -9,6 +9,8 @@ end
 gem 'devise'
 # To prevent error
 gem "rb-fsevent", "0.9.8"
+# Use FontAwesome for icons
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'

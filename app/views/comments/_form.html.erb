@@ -2,7 +2,7 @@
   method: :post, class: "form-button" do %>
 
   <%= label_tag 'comment[content]', "New Comment" %><br>
-  <%= text_area_tag 'comment[content]' %>
+  <%= text_area_tag 'comment[content]', nil, size: "40x4" %>
   <br>
 
   <input type="hidden" name="comment[user_id]" value=<%= current_user.id %>>
