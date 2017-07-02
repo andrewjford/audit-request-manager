@@ -1,0 +1,8 @@
+<%= form_tag "/projects/#{project.id}/requests/#{request.id}/comments",
+  method: :post, class: "form-button" do %>
+
+  <%= label_tag :content, "New Comment" %><br>
+  <%= text_area_tag :content %>
+  <br>
+  <button type="submit" class="button-link button-in-site form-button">Add Comment</button>
+<% end %>

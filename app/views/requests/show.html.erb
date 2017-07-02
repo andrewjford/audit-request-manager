@@ -19,20 +19,23 @@
 
 </div>
 
-<%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
-  method: :patch, class: "form-button" do %>
-  <input type="hidden" name="request[status]" value="Client Submitted">
-  <%= submit_tag 'Upload File', class: "button-link button-in-site" %>
-<% end %>
+<div class="inline-forms">
+  <%= render partial: 'comments/form', locals: {project: @request.project,
+     request: @request, comment: Comment.new} %>
 
-<%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
-  method: :patch, class: "form-button" do %>
-  <input type="hidden" name="request[status]" value="Closed">
-  <%= submit_tag 'Close Request', class: "button-link button-in-site" %>
-<% end %>
+  <%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
+    method: :patch, class: "form-button" do %>
+    <input type="hidden" name="request[status]" value="Client Submitted">
+    <%= submit_tag 'Upload File', class: "button-link button-in-site" %>
+  <% end %>
 
-<%= link_to 'Add Comment', root_path,
-  class:"button-link button-in-site" %>
+  <%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
+    method: :patch, class: "form-button" do %>
+    <input type="hidden" name="request[status]" value="Closed">
+    <%= submit_tag 'Close Request', class: "button-link button-in-site" %>
+  <% end %>
+</div>
+
 
 <br><br>
 <%= link_to "back", project_path(@request.project) %>

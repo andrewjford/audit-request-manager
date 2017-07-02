@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :projects, through: :user_projects
   belongs_to :organization
   has_many :requests
+  has_many :comments
 
   # validates :organization, presence: true
 
