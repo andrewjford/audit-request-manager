@@ -27,7 +27,7 @@ class User < ApplicationRecord
     # overwriting omniauth provider and uid when logging in through omniauth.
     # else creates new user
     if self.where(uid:auth.uid).exists?
-      user
+      user = self.where(uid:auth.uid).first
     elsif self.where(email: auth.info.email).exists?
       user = self.where(email: auth.info.email).first
       user.update(provider: auth.provider, uid: auth.uid)
