@@ -8,6 +8,7 @@ High
 - review authorizations are complete
 
 Med
+- should display 'none' when no projects assigned
 - give admin UI to set role levels
 - all info table mode for exporting
 - Summary of outstanding items

@@ -1,13 +1,8 @@
-<!-- <div class="user-description">
-  User: <%= @user.name %><br>
-  Organization: <%= @user.organization_name %>
-</div> -->
-
 <h1>Your Projects</h1>
 
 <div class="user-projects">
   <ul>
-    <% @user.projects.each do |project| %>
+    <% @projects.each do |project| %>
       <li><%= link_to "#{project.title}", project_path(project) %></li>
     <% end %>
   </ul>

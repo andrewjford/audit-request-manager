@@ -1,23 +1,16 @@
 <h1>Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="user-projects">
+  <ul>
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to "#{project.title}", project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+        <div class="inline"><%= link_to "#{project.title}", project_path(project) %></div>
+        <div class="inline float-right small-link"><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <div class="inline float-right small-link"><%= link_to 'Edit', edit_project_path(project) %></div>
+      </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</div>
 
 <br>
 
