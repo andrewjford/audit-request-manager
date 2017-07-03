@@ -1,6 +1,6 @@
 High
 - pundit auths for user profiles/objects
-- update projects index page
+- update projects index page (UI)
 - refactor views for better partials/helpers
 - delete requests
 - delete comments
