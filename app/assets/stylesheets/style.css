@@ -17,6 +17,7 @@
 
 .button-link {
   font-size: 1.4em;
+  text-align: center;
   text-decoration: none;
   background-color: #07649B;
   color: #feffff;
@@ -128,7 +129,16 @@
 }
 
 .user-projects li a:hover {
-  text-decoration: underline;;
+  text-decoration: underline;
+}
+
+
+.user-projects tr {
+  font-size: 1.3em;
+}
+
+.user-projects tr .button-in-site {
+  font-size: 0.9em;
 }
 
 .welcome-container {
