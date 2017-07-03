@@ -1,0 +1,11 @@
+<p>
+  Project: <%= link_to request.project.title, project_path(request.project) %>
+  <br>
+  Opened by: <%= link_to request.user.name, user_path(request.user) %>
+  <br>
+  Opened on: <%= request.created_at.strftime("%m/%d/%Y") %>
+  <br>
+  Last changed: <%= request.updated_at.strftime("%b %e, %Y %l:%M %p") %>
+  <br>
+  Status: <%= request.status %>
+</p>

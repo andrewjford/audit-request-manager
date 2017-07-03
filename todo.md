@@ -1,4 +1,5 @@
 High
+- pundit auths
 - refactor views for better partials/helpers
 - delete requests
 - delete comments
