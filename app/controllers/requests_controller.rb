@@ -25,6 +25,7 @@ class RequestsController < ApplicationController
 
   def update
     @request = Request.find(params[:id])
+    authorize @request
 
     if @request.update_attributes(permitted_attributes(@request))
       redirect_to project_request_path(@request.project, @request)
@@ -35,6 +36,8 @@ class RequestsController < ApplicationController
 
   def destroy
     @request = Request.find(params[:id])
+    authorize @request
+    
     @request.destroy
     redirect_to project_path(params[:project_id])
   end

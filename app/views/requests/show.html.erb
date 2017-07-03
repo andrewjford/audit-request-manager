@@ -1,12 +1,14 @@
 <h3>#<%= @request.request_number %>. <%= @request.title %> </h3>
 
 <%= render partial: 'request_details', locals: {request: @request} %>
-<%= upload_button(request) %>
-<%= status_button(request, "Closed") %>
-<%= status_button(request, "Open") %>
+<%= upload_button(@request) %>
+<%= status_button(@request, "Closed") %>
+<%= status_button(@request, "Open") %>
+<%= delete_button(@request) %>
 
 <hr>
-<p class="request-show-description">Original Request: <br><%= @request.description %></p>
+<h3>Original Request: </h3>
+<p class="request-show-description"><%= @request.description %></p>
 
 <h4>Comments</h4>
 

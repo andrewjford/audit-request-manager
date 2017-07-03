@@ -18,11 +18,16 @@ class RequestPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin? || user.manager? || user.auditor?
+    user.admin? || user.manager? && record.project.users.include?(user) ||
+    user.auditor? && record.project.users.include?(user)
+  end
+
+  def update?
+    user.admin? || record.project.users.include?(user)
   end
 
   def destroy?
-    user.admin? || user.manager?
+    user.admin? || user.manager? && record.project.users.include?(user)
   end
 
   def permitted_attributes

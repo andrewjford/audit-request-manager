@@ -25,4 +25,12 @@ module RequestsHelper
       end
   end
 
+  def delete_button(request)
+    if current_user.admin? || current_user.manager?
+      link_to "Delete Request", project_request_path(request.project,request),
+      data: { confirm: 'Are you sure?' }, method: :delete, class: "button-link
+      button-in-site float-right"
+    end
+  end
+
 end
