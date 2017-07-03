@@ -22,12 +22,25 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    data = auth.info
-    user = User.find_or_create_by(email: data['email']) do |u|
-      u.name = data['name']
-      u.email = data['email']
-      u.organization = Organization.find_or_create_by(name: "<not specified>")
-      u.password = Devise.friendly_token[0,20]
+    # first attempts login with uid (incase a repeat login from same provider)
+    # elsif accounts (very simply) for multiple identities by setting or
+    # overwriting omniauth provider and uid when logging in through omniauth.
+    # else creates new user
+    if self.where(uid:auth.uid).exists?
+      user
+    elsif self.where(email: auth.info.email).exists?
+      user = self.where(email: auth.info.email).first
+      user.update(provider: auth.provider, uid: auth.uid)
+      user
+    else
+      user = self.create do |u|
+        u.name = auth.info.name
+        u.email = auth.info.email
+        u.organization = Organization.find_or_create_by(name: "<not specified>")
+        u.password = Devise.friendly_token[0,20]
+        u.uid = auth.uid
+        u.provider = auth.provider
+      end
     end
   end
 

@@ -15,6 +15,10 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
+  # 
+  # def update_resource(resource, params)
+  #
+  # end
 
   def sign_up_params
     params.require(resource_name).permit(:email, :password,
