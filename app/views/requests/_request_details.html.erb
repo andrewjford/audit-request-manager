@@ -3,9 +3,9 @@
   <br>
   Opened by: <%= link_to request.user.name, user_path(request.user) %>
   <br>
-  Opened on: <%= request.created_at.strftime("%m/%d/%Y") %>
+  Opened on: <%= created_at(request) %>
   <br>
-  Last changed: <%= request.updated_at.strftime("%b %e, %Y %l:%M %p") %>
+  Last changed: <%= updated_at(request) %>
   <br>
   Status: <%= request.status %>
 </p>

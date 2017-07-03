@@ -1,44 +1,27 @@
 <h3>#<%= @request.request_number %>. <%= @request.title %> </h3>
 
 <%= render partial: 'request_details', locals: {request: @request} %>
-
+<%= upload_button(request) %>
+<%= status_button(request, "Closed") %>
+<%= status_button(request, "Open") %>
 <hr>
-<p class="request-show-description"><%= @request.description %></p>
+<p class="request-show-description">Original Request: <br><%= @request.description %></p>
 
 <h4>Comments</h4>
 
 <div class="request-comments">
   <ul>
-    <% @request.comments.each do |comment| %>
-      <li>
-        <div class="li-comment"><%= comment.author %>: <%= comment.content %></div>
-
-        <i>Posted on <%= post_date(comment) %></i>
-
-      </li>
-    <% end %>
+    <%= render @request.comments %>
   </ul>
 </div>
 
+<!-- Button links/form submittals -->
 <div class="inline-forms">
   <%= render partial: 'comments/form', locals: {project: @request.project,
      request: @request, comment: Comment.new} %>
 
-  <%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
-    method: :patch, class: "form-button" do %>
-    <input type="hidden" name="request[status]" value="Client Submitted">
-    <%= submit_tag 'Upload File', class: "button-link button-in-site" %>
-  <% end %>
-
-  <% if !current_user.client? %>
-    <%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
-      method: :patch, class: "form-button" do %>
-      <input type="hidden" name="request[status]" value="Closed">
-      <%= submit_tag 'Close Request', class: "button-link button-in-site" %>
-    <% end %>
-  <% end %>
 </div>
 
 
-<br><br>
+<br>
 <%= link_to "back", project_path(@request.project) %>
