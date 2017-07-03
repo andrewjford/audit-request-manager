@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :requests
   has_many :comments
 
-  # validates :organization, presence: true
+  enum role: [:admin, :manager, :auditor, :client]
 
   def organization_attributes=(org_attributes)
     self.organization = Organization.find_or_create_by(name: org_attributes[:name])

@@ -15,6 +15,8 @@ gem 'dotenv-rails'
 gem "rb-fsevent", "0.9.8"
 # Use FontAwesome for icons
 gem 'font-awesome-rails'
+# Use Pundit for authorizations
+gem 'pundit'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
