@@ -1,8 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
-  # GET /projects
-  # GET /projects.json
   def index
     @projects = policy_scope(Project)
     ### reasons for not using the code below?
@@ -14,23 +12,20 @@ class ProjectsController < ApplicationController
     # end
   end
 
-  # GET /projects/1
-  # GET /projects/1.json
   def show
+    authorize @project
     set_request_list(params, @project)
   end
 
-  # GET /projects/new
   def new
     @project = Project.new
+    authorize @project
   end
 
-  # GET /projects/1/edit
   def edit
+    authorize @project
   end
 
-  # POST /projects
-  # POST /projects.json
   def create
     @project = Project.new(project_params)
     authorize @project
@@ -48,8 +43,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /projects/1
-  # PATCH/PUT /projects/1.json
   def update
     authorize @project
     respond_to do |format|
@@ -63,9 +56,8 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # DELETE /projects/1
-  # DELETE /projects/1.json
   def destroy
+    authorize @project
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }

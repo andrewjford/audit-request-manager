@@ -3,6 +3,7 @@ class RequestsController < ApplicationController
   def new
     #need both request and project since form is nested resource
     @request = Request.new
+    authorize @request
     @project = Project.find(params[:project_id])
   end
 

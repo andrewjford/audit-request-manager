@@ -9,11 +9,23 @@ class ProjectPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    user.admin? || user.manager?
+  end
+
+  def edit?
+    user.admin? || user.manager?
+  end
+
   def create?
     user.admin? || user.manager?
   end
 
   def update?
     user.admin? || user.manager?
+  end
+
+  def destroy?
+    user.admin?
   end
 end

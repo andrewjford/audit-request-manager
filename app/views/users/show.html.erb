@@ -4,6 +4,8 @@
   <strong>Email:</strong> <%= @user.email %>
   <br>
   <strong>Organization:</strong> <%= @user.organization_name %>
+  <br>
+  <strong>User Role:</strong> <%= @user.role %>
 </div>
 
 <%= link_to "Edit", edit_registration_path(@user) if @user == current_user %>
