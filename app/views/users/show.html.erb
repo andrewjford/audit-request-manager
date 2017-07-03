@@ -6,4 +6,4 @@
   <strong>Organization:</strong> <%= @user.organization_name %>
 </div>
 
-<%= link_to "edit", edit_registration_path(@user) if @user == current_user %>
+<%= link_to "Edit", edit_registration_path(@user) if @user == current_user %>

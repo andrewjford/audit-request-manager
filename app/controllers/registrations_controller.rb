@@ -15,10 +15,15 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
-  # 
-  # def update_resource(resource, params)
-  #
-  # end
+
+  def update_resource(resource, params)
+    if resource.provider == "facebook"
+      params.delete("current_password")
+      resource.update_without_password(params)
+    else
+      resource.update_with_password(params)
+    end
+  end
 
   def sign_up_params
     params.require(resource_name).permit(:email, :password,
