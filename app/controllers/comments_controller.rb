@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
+    authorize @comment
+    
     if @comment.save
       redirect_to project_request_path(params[:project_id],params[:request_id])
     else
@@ -8,6 +10,14 @@ class CommentsController < ApplicationController
       flash[:error] = "New comment must have content."
       render :template => "requests/show"
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize @comment
+
+    @comment.destroy
+    redirect_to project_request_path(params[:project_id],params[:request_id])
   end
 
   private

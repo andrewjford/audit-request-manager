@@ -18,5 +18,5 @@
 <br>
 
 <% if current_user.admin? || current_user.manager? %>
-  <%= link_to 'New Project', new_project_path %>
+  <%= link_to 'New Project', new_project_path, class: "button-link button-in-site" %>
 <% end %>

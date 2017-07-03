@@ -4,6 +4,7 @@
 <%= upload_button(request) %>
 <%= status_button(request, "Closed") %>
 <%= status_button(request, "Open") %>
+
 <hr>
 <p class="request-show-description">Original Request: <br><%= @request.description %></p>
 
@@ -15,13 +16,9 @@
   </ul>
 </div>
 
-<!-- Button links/form submittals -->
-<div class="inline-forms">
-  <%= render partial: 'comments/form', locals: {project: @request.project,
-     request: @request, comment: Comment.new} %>
+<!-- Comment Form -->
+<%= render partial: 'comments/form', locals: {project: @request.project,
+   request: @request, comment: Comment.new} %>
 
-</div>
-
-
-<br>
+<br><br>
 <%= link_to "back", project_path(@request.project) %>

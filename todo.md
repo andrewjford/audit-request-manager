@@ -4,9 +4,7 @@ High
 - delete requests
 - delete comments
 - linkedin omniauth
-- review authorizations are complete
-- new project link should be button link
-- make request :id for path == request_count_id
+- review that authorizations are complete
 
 Med
 - should display 'none' when no projects assigned
@@ -21,6 +19,7 @@ Low
 - dummy file-uploads
 - timezone stuff, currently showing in EST
 - changed since last login
+- make request :id for path == request_count_id
 
 
 Notes

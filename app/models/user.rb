@@ -14,11 +14,13 @@ class User < ApplicationRecord
   enum role: [:admin, :manager, :auditor, :client]
 
   def organization_attributes=(org_attributes)
-    self.organization = Organization.find_or_create_by(name: org_attributes[:name])
+    #set org name to '<not specified>' if none given
+    org_attributes[:name] == "" ? org_name = "<not specified>" : org_name = org_attributes[:name]
+    self.organization = Organization.find_or_create_by(name: org_name)
   end
 
   def organization_name
-    self.organization ? self.organization.name : nil
+    self.organization.name
   end
 
   def self.from_omniauth(auth)
