@@ -1,9 +1,10 @@
 class ProjectPolicy < ApplicationPolicy
-  def create
+
+  def create?
     user.admin? || user.manager?
   end
 
-  def update
+  def update?
     user.admin? || user.manager?
   end
 end

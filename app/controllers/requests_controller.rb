@@ -8,6 +8,8 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
+    authorize @request
+
     if @request.save
       redirect_to project_path(@request.project)
     else
@@ -21,7 +23,8 @@ class RequestsController < ApplicationController
 
   def update
     @request = Request.find(params[:id])
-    if @request.update(request_params)
+
+    if @request.update_attributes(permitted_attributes(@request))
       redirect_to project_request_path(@request.project, @request)
     else
       render :show

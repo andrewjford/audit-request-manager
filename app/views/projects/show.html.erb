@@ -17,7 +17,7 @@
   class:"button-link button-in-site" %>
 <%= link_to 'Client Submitted', "/projects/#{@project.id}/status/client_submitted",
   class:"button-link button-in-site" %>
-<%= link_to 'Closed', "/projects/#{@project.id}/status/closed",
+<%= link_to 'Closed Requests', "/projects/#{@project.id}/status/closed",
   class:"button-link button-in-site" %>
 
 <h2>Audit Requests</h2>
@@ -28,7 +28,9 @@
   </table>
 </div>
 
-<div class="below-list">
-  <%= link_to 'New Request', new_project_request_path(@project),
-    class:"button-link button-in-site" %>
-</div>
+<% if !current_user.client? %>
+  <div class="below-list">
+    <%= link_to 'New Request', new_project_request_path(@project),
+      class:"button-link button-in-site" %>
+  </div>
+<% end %>

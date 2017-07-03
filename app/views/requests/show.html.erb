@@ -38,10 +38,12 @@
     <%= submit_tag 'Upload File', class: "button-link button-in-site" %>
   <% end %>
 
-  <%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
-    method: :patch, class: "form-button" do %>
-    <input type="hidden" name="request[status]" value="Closed">
-    <%= submit_tag 'Close Request', class: "button-link button-in-site" %>
+  <% if !current_user.client? %>
+    <%= form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
+      method: :patch, class: "form-button" do %>
+      <input type="hidden" name="request[status]" value="Closed">
+      <%= submit_tag 'Close Request', class: "button-link button-in-site" %>
+    <% end %>
   <% end %>
 </div>
 

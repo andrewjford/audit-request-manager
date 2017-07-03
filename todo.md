@@ -1,8 +1,13 @@
 High
-- authorization limited pages
-- authorization limited links
+- update projects index page
+- refactor views for better partials/helpers
+- delete requests
+- delete comments
+- linkedin omniauth
+- review authorizations are complete
 
 Med
+- give admin UI to set role levels
 - all info table mode for exporting
 - Summary of outstanding items
 
