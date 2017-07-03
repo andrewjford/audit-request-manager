@@ -5,6 +5,8 @@ High
 - review that authorizations are complete
 
 Med
+- select role on signup (for demos)
+- on signup, add new user to demo project
 - should display 'none' when no projects assigned
 - give admin UI to set role levels
 - all info table mode for exporting

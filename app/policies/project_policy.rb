@@ -14,7 +14,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def edit?
-    user.admin? || user.manager?
+    user.admin? || user.manager? && record.users.include?(user)
   end
 
   def create?
@@ -22,7 +22,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || user.manager?
+    user.admin? || user.manager? && record.users.include?(user)
   end
 
   def destroy?
