@@ -12,6 +12,7 @@ Med
 - give admin UI to set role levels
 - all info table mode for exporting
 - Summary of outstanding items
+- tests
 
 Low
 - allow admin to manage users

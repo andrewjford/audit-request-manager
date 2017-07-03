@@ -10,4 +10,5 @@ class Request < ApplicationRecord
   def comment_count
     self.comments.size
   end
+  
 end
