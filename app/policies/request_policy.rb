@@ -1,4 +1,13 @@
 class RequestPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        scope.joins(project: :user_projects).where('user_projects.user_id=?', user.id)
+      end
+    end
+  end
 
   def new?
     user.admin? || user.manager? || user.auditor?

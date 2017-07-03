@@ -5,6 +5,7 @@ High
 - linkedin omniauth
 - review authorizations are complete
 - new project link should be button link
+- make request :id for path == request_count_id
 
 Med
 - should display 'none' when no projects assigned

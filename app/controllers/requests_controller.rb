@@ -20,6 +20,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    authorize @request
   end
 
   def update
