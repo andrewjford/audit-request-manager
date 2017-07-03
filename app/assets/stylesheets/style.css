@@ -132,14 +132,19 @@
   text-decoration: underline;
 }
 
-
 .user-projects tr {
   font-size: 1.3em;
 }
 
+.user-projects a:hover {
+  text-decoration: underline;
+}
+
 .user-projects tr .button-in-site {
   font-size: 0.9em;
+  text-decoration: none;
 }
+
 
 .welcome-container {
   width: 90%;
