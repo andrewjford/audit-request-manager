@@ -1,4 +1,5 @@
 High
+- pundit auths for user profiles/objects
 - update projects index page
 - refactor views for better partials/helpers
 - delete requests
@@ -20,3 +21,5 @@ Low
 
 Notes
 - is it best practice to have hidden inputs in form, or add inputs in through controller?
+- is it better to use ActiveRecord queries to scope index or just do it manually
+in the controller with activerecord model associations?

@@ -4,11 +4,14 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    if current_user.admin? || current_user.manager?
-      @projects = Project.all
-    else
-      @projects = current_user.projects
-    end
+    @projects = policy_scope(Project)
+    ### reasons for not using the code below?
+
+    # if current_user.admin? || current_user.manager?
+    #   @projects = Project.all
+    # else
+    #   @projects = current_user.projects
+    # end
   end
 
   # GET /projects/1
