@@ -4,6 +4,9 @@ class Request < ApplicationRecord
   has_many :comments
   after_create :increase_project_count
 
+  validates :title, presence: true
+  validates :description, presence: true
+
   def description_trunc
     description.size > 200 ? description[0..196]+"..." : description
   end

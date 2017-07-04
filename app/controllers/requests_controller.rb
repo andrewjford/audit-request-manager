@@ -15,6 +15,7 @@ class RequestsController < ApplicationController
     if @request.save
       redirect_to project_path(@request.project)
     else
+      @project = Project.find(params[:project_id])
       render :new
     end
   end

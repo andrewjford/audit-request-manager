@@ -1,6 +1,6 @@
 <h3>#<%= @request.request_number %>. <%= @request.title %> </h3>
 
-<%= render partial: 'request_details', locals: {request: @request} %>
+<%= render partial: 'requests/request_details', locals: {request: @request} %>
 <%= upload_button(@request) %>
 <%= status_button(@request, "Closed") %>
 <%= status_button(@request, "Open") %>
