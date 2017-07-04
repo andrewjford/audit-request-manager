@@ -9,10 +9,10 @@
 #create users
 uber = User.create(email: 'admin@admin.admin', password: 'asdfasdf', name: 'AJF',
   organization_attributes: {name: 'AuditRequest'}, role: 0)
-manager = User.create(email: 'bob@blb.com', password: 'asdfasdf', name: 'Bob Loblaw',
-  organization_attributes: {name: 'Bob Loblaw LLP'}, role: 1)
-auditor = User.create(email: 'lolby@blb.com', password: 'asdfasdf', name: 'Laura Olby',
-  organization_attributes: {name: 'Bob Loblaw LLP'}, role: 2)
+manager = User.create(email: 'boblob@bll.com', password: 'asdfasdf', name: 'Bob Lob',
+  organization_attributes: {name: 'Bob Lob Law LLP'}, role: 1)
+auditor = User.create(email: 'lalaw@bll.com', password: 'asdfasdf', name: 'Laura Law',
+  organization_attributes: {name: 'Bob Lob Law LLP'}, role: 2)
 client = User.create(email: 'mary@exco.com', password: 'asdfasdf', name: 'Mary Smith',
   organization_attributes: {name: 'Example Co. LLC'}, role: 3)
 
@@ -24,23 +24,23 @@ example_project.users << client
 #create example requests
 req1 = example_project.requests.create(title: "FYE 2017 TB", description:
   "Please provide the final TB.", user: manager, status: "Open", request_number:
-  example_project.next_request_number)
+  example_project.request_counter)
 req2 = example_project.requests.create(title: "Bank Accounts", description:
   "Please provide a list of bank accounts used by the organization during the year.
   Include bank, bank account number, and corresponding TB account.", user: auditor,
-  status: "Open", request_number: example_project.next_request_number)
+  status: "Open", request_number: example_project.request_counter)
 example_project.requests.create(title: "Bank Reconciliations", description:
   "Please provide bank reconciliations for each cash account.", user: auditor,
-  status: "Open", request_number: example_project.next_request_number)
+  status: "Open", request_number: example_project.request_counter)
 req4 = example_project.requests.create(title: "FY 2017 GL Detail", description:
   "Please provide the full GL detail.", user: auditor, status: "Open", request_number:
-  example_project.next_request_number)
+  example_project.request_counter)
 example_project.requests.create(title: "AR Schedule and reconciliation", description:
   "Please provide the AR schedule for FYE and any reconciliations to the TB",
-   user: auditor, status: "Open", request_number: example_project.next_request_number)
+   user: auditor, status: "Open", request_number: example_project.request_counter)
 example_project.requests.create(title: "AP Schedule", description:
   "Please provide the AP schedule for FYE", user: auditor, status: "Open",
-  request_number: example_project.next_request_number)
+  request_number: example_project.request_counter)
 
 #create example comments
 example_project.requests.find_by(request_number: 1).comments.create(content: "See uploaded.",

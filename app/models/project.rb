@@ -16,12 +16,9 @@ class Project < ApplicationRecord
     end
   end
 
-  def requests_count
-    self.requests.count
+  def increase_request_count
+    #this is called in the request model after a new request is created for the project
+    self.request_counter += 1
+    self.save
   end
-
-  def next_request_number
-    requests_count + 1
-  end
-
 end

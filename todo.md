@@ -2,19 +2,20 @@ High
 - refactor views for better partials/helpers
 - linkedin omniauth
 - review that authorizations are complete
+- if not logged in, redirect to welcome
+- edit on project show page should not be visible to client, etc
 
 Med
 - add user link on comments
 - select role on signup (for demos)
-- on signup, add new user to demo project
 - should display 'none' when no projects assigned
-- give admin UI to set role levels
-- all info table mode for exporting
-- Summary of outstanding items
 - tests
 - Client comment background color is different
 
 Low
+- Summary of outstanding items
+- all info table mode for exporting
+- give admin UI to set role levels
 - allow admin to manage users
 - add comment form failure should display flash message
 - dummy file-uploads
