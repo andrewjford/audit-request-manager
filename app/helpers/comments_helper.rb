@@ -5,7 +5,7 @@ module CommentsHelper
   end
 
   def delete_comment_link(comment)
-    if current_user.admin? || comment.user == current_user
+    if policy(comment).destroy?
       link_to "delete",
         project_request_comment_path(comment.request.project, comment.request, comment),
         method: :delete,

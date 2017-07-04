@@ -1,11 +1,11 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def new
     #need both request and project since form is nested resource
     @request = Request.new
-    authorize @request
     @project = Project.find(params[:project_id])
+    authorize @project, :add_request?
   end
 
   def create

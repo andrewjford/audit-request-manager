@@ -27,11 +27,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -51,6 +46,11 @@
     <%= f.label :role, "Auditor", value: "manager" %>
     <%= f.radio_button :role, "client" %>
     <%= f.label :role, "Client", value: "manager" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">

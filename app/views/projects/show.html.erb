@@ -8,7 +8,7 @@
     <%= link_to "#{user.name}", user_path(user) %>
   <% end %>
   <br>
-  <%= link_to 'Edit', edit_project_path(@project) %>
+  <%= link_to 'Edit', edit_project_path(@project) if policy(@project).edit? %>
 </p>
 
 <%= link_to 'All Requests', "/projects/#{@project.id}",
@@ -28,7 +28,7 @@
   </table>
 </div>
 
-<% if !current_user.client? %>
+<% if policy(@project).add_request? %>
   <div class="below-list">
     <%= link_to 'New Request', new_project_request_path(@project),
       class:"button-link button-in-site" %>

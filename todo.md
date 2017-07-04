@@ -1,8 +1,7 @@
 High
 - refactor views for better partials/helpers
 - linkedin omniauth
-- review that authorizations are complete
-- edit on project show page should not be visible to client, etc
+- review view authorizations/refactor
 
 Med
 - add user link on comments

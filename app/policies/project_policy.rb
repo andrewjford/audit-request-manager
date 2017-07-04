@@ -28,4 +28,9 @@ class ProjectPolicy < ApplicationPolicy
   def destroy?
     user.admin?
   end
+
+  def add_request?
+    user.admin? || user.manager? && record.users.include?(user) ||
+    user.auditor? && record.users.include?(user)
+  end
 end

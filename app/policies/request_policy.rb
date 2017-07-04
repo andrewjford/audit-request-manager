@@ -9,10 +9,6 @@ class RequestPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    user.admin? || user.manager? || user.auditor?
-  end
-
   def show?
     user.admin? || record.project.users.include?(user)
   end
