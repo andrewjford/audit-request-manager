@@ -2,9 +2,10 @@ High
 -
 
 Med
-- 
+-
 
 Low
+- bug where user gets added twice to project if the project failed to send the first time
 - tests
 - fix views to not break when a user is deleted
 - add user link on comments

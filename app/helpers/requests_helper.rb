@@ -1,10 +1,10 @@
 module RequestsHelper
   def created_at(request)
-    request.created_at.strftime("%m/%d/%Y")
+    request.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%Y")
   end
 
   def updated_at(request)
-    request.updated_at.strftime("%m/%d/%Y %l:%M %p")
+    request.updated_at.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%Y %l:%M %p")
   end
 
   def status_button(request, action)
