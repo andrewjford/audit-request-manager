@@ -9,6 +9,8 @@ end
 gem 'devise'
 # Use for facebook Omniauth login
 gem 'omniauth-facebook'
+# 2nd Omniauth for github
+gem 'omniauth-github'
 # Use DotEnv to manage ENV for OmniAuth keys
 gem 'dotenv-rails'
 # To prevent error

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+         :omniauthable, :omniauth_providers => [:facebook, :github]
 
   has_many :user_projects
   has_many :projects, through: :user_projects
@@ -35,6 +35,7 @@ class User < ApplicationRecord
       user.update(provider: auth.provider, uid: auth.uid)
       user
     else
+      binding.pry
       user = self.create do |u|
         u.name = auth.info.name
         u.email = auth.info.email

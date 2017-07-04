@@ -253,6 +253,9 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
     callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'],
+    scope: "user:email",
+    callback_url: "http://localhost:3000/users/auth/github/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
