@@ -8,7 +8,7 @@ module RequestsHelper
   end
 
   def status_button(request, action)
-    if !current_user.client?
+    if policy(request).full_update?
       form_tag "/projects/#{params[:project_id]}/requests/#{params[:id]}",
       method: :patch, class: "form-button" do
         hidden_field_tag('request[status]', "#{action}") +
@@ -26,7 +26,7 @@ module RequestsHelper
   end
 
   def delete_button(request)
-    if current_user.admin? || current_user.manager?
+    if policy(request).destroy?
       link_to "Delete Request", project_request_path(request.project,request),
       data: { confirm: 'Are you sure?' }, method: :delete, class: "button-link
       button-in-site float-right"

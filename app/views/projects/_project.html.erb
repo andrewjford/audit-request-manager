@@ -1,0 +1,9 @@
+<tr>
+  <td><%= link_to "#{project.title}", project_path(project) %></td>
+  <td><%= project.auditee %></td>
+  <td><%= link_to 'Edit', edit_project_path(project),
+      class: "button-link button-in-site"%>
+    <%= link_to 'Delete',project, method: :delete, data:
+      { confirm: 'Are you sure?' }, class: "button-link button-in-site" %>
+  </td>
+</tr>

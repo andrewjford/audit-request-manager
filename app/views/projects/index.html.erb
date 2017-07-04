@@ -2,22 +2,16 @@
 
 <div class="user-projects">
   <table>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to "#{project.title}", project_path(project) %></td>
-        <td>- <%= project.auditee %></td>
-        <td><%= link_to 'Edit', edit_project_path(project),
-            class: "button-link button-in-site"%>
-          <%= link_to 'Delete',project, method: :delete, data:
-            { confirm: 'Are you sure?' }, class: "button-link button-in-site" %>
-        </td>
-      </tr>
-    <% end %>
+    <tr>
+      <th>Audit Title</th>
+      <th>Organization</th>
+    </tr>
+    <%= render @projects %>
   </table>
 </div>
 
 <br>
 
-<% if current_user.admin? || current_user.manager? %>
+<% if policy(:project).new? %>
   <%= link_to 'New Project', new_project_path, class: "button-link button-in-site" %>
 <% end %>

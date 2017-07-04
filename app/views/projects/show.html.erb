@@ -8,17 +8,10 @@
     <%= link_to "#{user.name}", user_path(user) %>
   <% end %>
   <br>
-  <%= link_to 'Edit', edit_project_path(@project) if policy(@project).edit? %>
+  <%= edit_profile_link(@project) %>
 </p>
 
-<%= link_to 'All Requests', "/projects/#{@project.id}",
-  class:"button-link button-in-site" %>
-<%= link_to 'Open Requests', "/projects/#{@project.id}/status/open",
-  class:"button-link button-in-site" %>
-<%= link_to 'Client Submitted', "/projects/#{@project.id}/status/client_submitted",
-  class:"button-link button-in-site" %>
-<%= link_to 'Closed Requests', "/projects/#{@project.id}/status/closed",
-  class:"button-link button-in-site" %>
+<%= render "filter_buttons" %>
 
 <h2>Audit Requests</h2>
 

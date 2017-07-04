@@ -1,0 +1,8 @@
+<%= link_to 'All Requests', "/projects/#{@project.id}",
+  class:"button-link button-in-site" %>
+<%= link_to 'Open Requests', "/projects/#{@project.id}/status/open",
+  class:"button-link button-in-site" %>
+<%= link_to 'Client Submitted', "/projects/#{@project.id}/status/client_submitted",
+  class:"button-link button-in-site" %>
+<%= link_to 'Closed Requests', "/projects/#{@project.id}/status/closed",
+  class:"button-link button-in-site" %>

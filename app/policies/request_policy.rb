@@ -22,6 +22,11 @@ class RequestPolicy < ApplicationPolicy
     user.admin? || record.project.users.include?(user)
   end
 
+  def full_update?
+    user.admin? || user.manager? && record.project.users.include?(user) ||
+    user.auditor? && record.project.users.include?(user)
+  end
+
   def destroy?
     user.admin? || user.manager? && record.project.users.include?(user)
   end
