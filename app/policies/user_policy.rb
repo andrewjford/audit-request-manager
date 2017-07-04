@@ -9,7 +9,11 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def update?
-    user.admin?
+  def know_role?
+    user.admin? || user.manager? || user.auditor?
+  end
+
+  def edit?
+    record == user
   end
 end

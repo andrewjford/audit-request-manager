@@ -1,5 +1,5 @@
 High
-- refactor views for better partials/helpers
+- refactor controllers
 - linkedin omniauth
 - review view authorizations/refactor
 

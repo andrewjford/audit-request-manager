@@ -5,9 +5,9 @@
   <br>
   <strong>Organization:</strong> <%= @user.organization_name %>
   <br>
-  <% if !current_user.client? %>
+  <% if policy(current_user).know_role? %>
     <strong>User Role:</strong> <%= @user.role %>
   <% end %>
 </div>
 
-<%= link_to "Edit", edit_registration_path(@user) if @user == current_user %>
+<%= link_to "Edit", edit_registration_path(@user) if policy(@user).edit? %>
