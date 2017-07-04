@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  
+
   def new
     build_resource({})
     self.resource.organization = Organization.new
@@ -17,7 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def update_resource(resource, params)
-    if resource.provider == "facebook"
+    if resource.provider == "facebook" || resource.provider == "github"
       params.delete("current_password")
       resource.update_without_password(params)
     else
