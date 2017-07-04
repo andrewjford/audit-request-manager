@@ -4,7 +4,7 @@ module RequestsHelper
   end
 
   def updated_at(request)
-    request.updated_at.strftime("%b %e, %Y %l:%M %p")
+    request.updated_at.strftime("%m/%d/%Y %l:%M %p")
   end
 
   def status_button(request, action)

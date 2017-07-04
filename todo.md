@@ -1,10 +1,10 @@
 High
-- pundit auths
 - refactor views for better partials/helpers
 - linkedin omniauth
 - review that authorizations are complete
 
 Med
+- add user link on comments
 - select role on signup (for demos)
 - on signup, add new user to demo project
 - should display 'none' when no projects assigned
@@ -12,6 +12,7 @@ Med
 - all info table mode for exporting
 - Summary of outstanding items
 - tests
+- Client comment background color is different
 
 Low
 - allow admin to manage users
