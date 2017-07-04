@@ -1,21 +1,14 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+
   def index
     @projects = policy_scope(Project)
-    ### reasons for not using the code below?
-
-    # if current_user.admin? || current_user.manager?
-    #   @projects = Project.all
-    # else
-    #   @projects = current_user.projects
-    # end
   end
 
   def show
     authorize @project
-    set_request_list(params, @project)
+    @requests = @project.filtered_requests(params[:status_code])
   end
 
   def new
@@ -67,27 +60,15 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:title,:auditee,user_ids:[],user_attributes: [:email])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
-    def set_request_list(params,project)
-      if !params[:status_code]
-        @requests = project.requests
-      elsif params[:status_code] == "open"
-        @requests = project.requests.where(status: 'Open')
-      elsif params[:status_code] == "client_submitted"
-        @requests = project.requests.where(status: 'Client Submitted')
-      elsif params[:status_code] == "closed"
-        @requests = project.requests.where(status: 'Closed')
-      else
-        @requests = project.requests
-      end
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_params
+    params.require(:project).permit(:title,:auditee,user_ids:[],user_attributes: [:email])
+  end
+
 end

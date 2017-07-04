@@ -21,4 +21,19 @@ class Project < ApplicationRecord
     self.request_counter += 1
     self.save
   end
+
+  def filtered_requests(status_code)
+    if status_code.nil?
+      self.requests
+    elsif status_code == "open"
+      self.requests.where(status: 'Open')
+    elsif status_code == "client_submitted"
+      self.requests.where(status: 'Client Submitted')
+    elsif status_code == "closed"
+      self.requests.where(status: 'Closed')
+    else
+      self.requests
+    end
+  end
+
 end
