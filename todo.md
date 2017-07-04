@@ -1,11 +1,11 @@
 High
-- deal with deleted user stuff
+-
 
 Med
-- tests
-- Client comment background color is different
+- 
 
 Low
+- tests
 - fix views to not break when a user is deleted
 - add user link on comments
 - Summary of outstanding items
