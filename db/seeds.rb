@@ -41,6 +41,9 @@ example_project.requests.create(title: "AR Schedule and reconciliation", descrip
 example_project.requests.create(title: "AP Schedule", description:
   "Please provide the AP schedule for FYE", user: auditor, status: "Open",
   request_number: example_project.request_counter)
+example_project.requests.create(title: "Fixed Asset Rollforward", description:
+  "Please provide the Fixed Asset rollforward schedule for FYE", user: auditor, status: "Open",
+  request_number: example_project.request_counter)
 
 #create example comments
 example_project.requests.find_by(request_number: 1).comments.create(content: "See uploaded.",
@@ -52,6 +55,11 @@ req1.save
 
 example_project.requests.find_by(request_number: 2).comments.create(content:
   "Uploaded. We closed the BoA in February.", user: client)
+example_project.requests.find_by(request_number: 2).comments.create(content:
+  "Ok, thanks. We will confirm that account as well.", user: auditor)
+example_project.requests.find_by(request_number: 2).comments.create(content:
+  "Is there a bank account on here for the #1005552 TB account?", user: auditor)
+  
 req2.status = "Client Submitted"
 req2.save
 req4.status = "Client Submitted"

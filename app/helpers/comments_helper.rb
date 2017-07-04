@@ -12,4 +12,13 @@ module CommentsHelper
         class: "small-link float-right"
     end
   end
+
+  def comment_color(comment)
+    if comment.user.client?
+      "li-comment-client"
+    else
+      "li-comment"
+    end
+  end
+
 end

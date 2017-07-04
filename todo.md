@@ -1,13 +1,13 @@
 High
+- deal with deleted user stuff
 
 Med
-- add user link on comments
-- select role on signup (for demos)
-- should display 'none' when no projects assigned
 - tests
 - Client comment background color is different
 
 Low
+- fix views to not break when a user is deleted
+- add user link on comments
 - Summary of outstanding items
 - all info table mode for exporting
 - give admin UI to set role levels
