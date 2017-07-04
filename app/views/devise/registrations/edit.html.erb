@@ -43,6 +43,16 @@
     <% end %>
   </div>
 
+  <div class="field">
+    <%= f.label :status, "Role" %><br>
+    <%= f.radio_button :role, "manager" %>
+    <%= f.label :role, "Audit Manager", value: "manager" %>
+    <%= f.radio_button :role, "auditor" %>
+    <%= f.label :role, "Auditor", value: "manager" %>
+    <%= f.radio_button :role, "client" %>
+    <%= f.label :role, "Client", value: "manager" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
