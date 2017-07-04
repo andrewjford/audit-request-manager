@@ -2,7 +2,6 @@ High
 - refactor views for better partials/helpers
 - linkedin omniauth
 - review that authorizations are complete
-- if not logged in, redirect to welcome
 - edit on project show page should not be visible to client, etc
 
 Med

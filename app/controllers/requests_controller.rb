@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def new
     #need both request and project since form is nested resource
     @request = Request.new
@@ -37,7 +38,7 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     authorize @request
-    
+
     @request.destroy
     redirect_to project_path(params[:project_id])
   end

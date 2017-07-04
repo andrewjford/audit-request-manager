@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
     @comment = Comment.new(comment_params)
     authorize @comment
-    
+
     if @comment.save
       redirect_to project_request_path(params[:project_id],params[:request_id])
     else

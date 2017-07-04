@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   def index
     @projects = policy_scope(Project)
     ### reasons for not using the code below?
