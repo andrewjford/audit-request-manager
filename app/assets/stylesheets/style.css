@@ -11,6 +11,10 @@
   margin: 1.1em 0;
 }
 
+.big-icon {
+  font-size: 40px;
+}
+
 .bolded {
   font-weight: bold;
 }
@@ -157,6 +161,10 @@
   display: inline-block;
   width: 80px;
   padding: 10px 12px 10px 12px;
+}
+
+.welcome-hr {
+  width: 19%;
 }
 
 #flash_error, #flash_notice, #flash_alert {

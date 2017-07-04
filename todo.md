@@ -1,7 +1,5 @@
 High
 - refactor controllers
-- linkedin omniauth
-- review view authorizations/refactor
 
 Med
 - add user link on comments

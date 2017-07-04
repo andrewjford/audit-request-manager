@@ -6,12 +6,12 @@
   <%= link_to "Sign Up", new_user_registration_path, class:"button-link" %>
   <%= link_to "Log in", new_user_session_path, class:"button-link" %>
 
-  <br><br>
-
-  <div class="omniauths">
-    <%= link_to image_tag("facebook_login_s.png"),
-      user_facebook_omniauth_authorize_path %>
-    <%= link_to "Sign in with GitHub", user_github_omniauth_authorize_path %>
+  <br>
+  <p>or Login through</p>
+  <hr class="welcome-hr">
+  <div class="omniauths big-icon">
+    <%= link_to("<i class='fa fa-facebook-square'></i>".html_safe, user_facebook_omniauth_authorize_path) %>
+    <%= link_to("<i class='fa fa-github-square'></i>".html_safe, user_github_omniauth_authorize_path) %>
   </div>
 
 </div>
