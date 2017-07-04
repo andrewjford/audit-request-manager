@@ -99,6 +99,14 @@
   margin-bottom: 12px;
 }
 
+.request-comments a {
+  text-decoration: none;
+}
+
+.request-comments a:hover {
+  text-decoration: underline;
+}
+
 .request-show-description {
   width: 80%;
   font-size: 1.1em;
