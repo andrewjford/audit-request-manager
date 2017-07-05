@@ -3,13 +3,14 @@
 Specs:
 - [x] Using Ruby on Rails for the project
 - [x] Include at least one has_many relationship (x has_many y e.g. User has_many Recipes)
-    - Project has many requests.
+    - Project has many Requests.
 - [x] Include at least one belongs_to relationship (x belongs_to y e.g. Post belongs_to User)
-    - Request belongs_to project.
+    - Request belongs_to Project.
 - [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
-    - Project has many comments through request.
+    - Project has many Comments through Request.
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
     - Requests have titles and descriptions.
+    - requests.title requests.description
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     - User, Project, Request and Comment all have some validations
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
@@ -17,13 +18,21 @@ Specs:
     - /organizations/audit_firms
     - lists all organizations with 'Manager' users (who can create new projects)
 - [x] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
+    - /users/sign_up, Organization
 - [x] Include signup (how e.g. Devise)
+    - Devise
 - [x] Include login (how e.g. Devise)
+    - Devise
 - [x] Include logout (how e.g. Devise)
+    - Devise
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+    - Devise/OmniAuth for Facebook and GitHub
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
+    - /projects/1/requests
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+    - /projects/2/requests/new
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
+    - /projects/2/requests/new
 
 Confirm:
 - [x] The application is pretty DRY
