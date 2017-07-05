@@ -12,7 +12,6 @@ Low
 - all info table mode for exporting
 - give admin UI to set role levels
 - allow admin to manage users
-- add comment form failure should display flash message
 - dummy file-uploads
 - timezone stuff, currently showing in EST
 - changed since last login

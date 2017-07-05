@@ -33,4 +33,16 @@ module RequestsHelper
     end
   end
 
+  def request_status_td(request)
+    if request.status == "Open"
+      content_tag(:td, request.status, class: "status-open")
+    elsif request.status == "Client Submitted"
+      content_tag(:td, request.status, class: "status-sub")
+    elsif request.status == "Closed"
+      content_tag(:td, request.status, class: "status-closed")
+    else
+      content_tag(:td, request.status)
+    end
+  end
+
 end

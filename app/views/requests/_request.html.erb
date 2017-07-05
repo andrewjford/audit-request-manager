@@ -2,15 +2,9 @@
   <td class="numbering">
     <%= request.request_number %>
   </td>
-  <% if request.status == "Open" %>
-    <%= content_tag(:td, request.status, class: "status-open") %>
-  <% elsif request.status == "Client Submitted" %>
-    <%= content_tag(:td, request.status, class: "status-sub") %>
-  <% elsif request.status == "Closed" %>
-    <%= content_tag(:td, request.status, class: "status-closed") %>
-  <% else %>
-    <%= content_tag(:td, request.status) %>
-  <% end %>
+
+  <%= request_status_td(request) %>
+
   <td class="request-info">
     <%= link_to "#{request.title} - #{request.description_trunc}",
      project_request_path(request.project, request) %>
