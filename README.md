@@ -6,11 +6,7 @@ This is a Rails web app that handles audit requests between auditors and auditee
 
 Installation
 
-Run 'bundle install'
-Run 'rake db:migrate'
-Run 'rake db:seed'
-Start server with 'rails s'
-Open provided local address in web browser
+This app is currently set up to run on postgresql. A postgresql database would need to be setup and properly referenced. A secrets.yml needs to be in /config. At /config/secrets.sample.yml is a sample of what secrets.yml would be. The keys would need to be created. Also, the app is setup to read Facebook and Github authorization keys from ENV. 
 
 Details
 
