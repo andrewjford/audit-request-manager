@@ -246,6 +246,10 @@ main {
   width: 90%;
 }
 
+ol li {
+  list-style-type: decimal;
+}
+
 ul {
   padding-left: 0;
 }
