@@ -24,15 +24,15 @@ class Project < ApplicationRecord
 
   def filtered_requests(status_code)
     if status_code.nil?
-      self.requests
+      self.requests.order(:request_number)
     elsif status_code == "open"
-      self.requests.where(status: 'Open')
+      self.requests.where(status: 'Open').order(:request_number)
     elsif status_code == "client_submitted"
-      self.requests.where(status: 'Client Submitted')
+      self.requests.where(status: 'Client Submitted').order(:request_number)
     elsif status_code == "closed"
-      self.requests.where(status: 'Closed')
+      self.requests.where(status: 'Closed').order(:request_number)
     else
-      self.requests
+      self.requests.order(:request_number)
     end
   end
 
