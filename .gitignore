@@ -24,5 +24,3 @@
 
 #Ignore env file from DotENV gem
 .env
-
-/config/secrets.yml
