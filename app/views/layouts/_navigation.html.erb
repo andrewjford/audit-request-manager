@@ -10,6 +10,7 @@
           <li><%= link_to "Profile", user_path(current_user) %></li>
           <li><%= link_to "Projects", projects_path %></li>
           <%= org_link %>
+          <%= users_link %>
           <li id="navbar-logout"><%= link_to "Log Out", destroy_user_session_path,
             method: :delete%></li>
         <% else %>
