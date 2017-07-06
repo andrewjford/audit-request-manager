@@ -1,12 +1,12 @@
-# Audit Request Manager
+# AuditRequest
 
 A Rails web app for facilitating audit file transfers and requests. Currently hosted at https://auditrequest.herokuapp.com/.
 
-Overview
+##Overview
 
 This is a Rails web app that handles audit requests between auditors and auditees. Users, depending on their access level, can create projects, add requests to projects, comment on requests, and upload files related to requests*. In the current version, file uploads are disabled.
 
-Details
+##Details
 
 Users can Sign Up directly with the site, or through Facebook or GitHub accounts. User access is restricted by the account's access level which defaults to Manager in the current version. Manager is the highest available access level. One step down is the Auditor level. The most restricted level is Client. This demo version allows the user to change their own access level in the profile edit page.
 
@@ -14,6 +14,14 @@ An example project is automatically provided with the database seed, and new use
 
 Managers and Auditors can create request items in projects they are assigned to. Managers and Auditors can set the status of requests to Open or Closed. All users can "upload" files in relation to a request, and add comments. Pressing the upload files button currently just sets the status of the request to Client Submitted.
 
-Installation
+##Installation
 
 This app is currently set up to run on postgresql. A postgresql database would need to be setup and properly referenced. A secrets.yml needs to be in /config. At /config/secrets.sample.yml is a sample of what secrets.yml would be. The keys would need to be created. Also, the app is setup to read Facebook and Github authorization keys from ENV.
+
+##License
+
+See LICENSE.md file.
+
+##Contributing
+
+See our CONTRIBUTING.md file.

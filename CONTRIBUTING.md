@@ -1,4 +1,8 @@
-# Contributor Code of Conduct
+# Contributing
+
+We welcome anyone that wants to contribute to AuditRequest under the following code of conduct. Please reach out via issue, email, or any other method with the owners of this repository to discuss potential changes.
+
+## Code of Conduct
 
 As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.
 
