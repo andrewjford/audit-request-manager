@@ -16,4 +16,12 @@ class UserPolicy < ApplicationPolicy
   def edit?
     record == user
   end
+
+  def index?
+    user.admin?
+  end
+
+  def destroy?
+    user.admin?
+  end
 end
