@@ -251,7 +251,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
+  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
+    callback_url: "https://auditrequest.herokuapp.com/users/auth/facebook/callback"
 
   config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'],
     scope: "user:email",
