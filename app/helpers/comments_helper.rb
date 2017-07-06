@@ -14,7 +14,7 @@ module CommentsHelper
   end
 
   def comment_color(comment)
-    if comment.user.client?
+    if comment.user && comment.user.client?
       "li-comment-client"
     else
       "li-comment"

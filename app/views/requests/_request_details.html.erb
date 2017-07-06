@@ -1,7 +1,7 @@
 <p>
   Project: <%= link_to request.project.title, project_path(request.project) %>
   <br>
-  Opened by: <%= link_to request.user.name, user_path(request.user) %>
+  Opened by: <%= user_name_and_link(request.user) %>
   <br>
   Opened on: <%= created_at(request) %>
   <br>
