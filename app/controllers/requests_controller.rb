@@ -23,6 +23,11 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     authorize @request
+
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @request}
+    end
   end
 
   def update
