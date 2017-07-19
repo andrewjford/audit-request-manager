@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if @comment.save
-      redirect_to project_request_path(params[:project_id],params[:request_id])
+      render json: @comment, status: 201
+      # redirect_to project_request_path(params[:project_id],params[:request_id])
     else
       @request = Request.find(params[:request_id])
       flash[:error] = "New comment must have content."

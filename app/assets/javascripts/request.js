@@ -11,6 +11,10 @@ function addComment(form){
   var posting = $.post(form.attr('action'), formValues);
 
   posting.done(function(data){
-    console.log(data);
+    showComment(data);
   })
+}
+
+function showComment(data){
+  $('#comment-list').append("<li>"+data["data"]["attributes"]["content"]+"</li>")
 }
