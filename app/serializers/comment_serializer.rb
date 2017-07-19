@@ -1,6 +1,9 @@
 class CommentSerializer < ActiveModel::Serializer
   attributes :id, :content, :created_at, :user
 
+  belongs_to :request
+  belongs_to :project
+
   def user
     {
       id: object.user.id,

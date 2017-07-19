@@ -21,6 +21,8 @@ gem 'font-awesome-rails'
 gem 'pundit'
 # Use Active Model Serializer
 gem 'active_model_serializers', '~> 0.10.0'
+# Use handlebars_assets to integrate Handlebars.js
+gem 'handlebars_assets'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'

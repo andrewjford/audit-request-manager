@@ -24,7 +24,8 @@ class RequestSerializer < ActiveModel::Serializer
         updated_at: comment.updated_at,
         user: {
           id: comment.user.id,
-          name: comment.user.name
+          name: comment.user.name,
+          role: comment.user.role
         }
       }
     end

@@ -16,5 +16,6 @@ function addComment(form){
 }
 
 function showComment(data){
-  $('#comment-list').append("<li>"+data["data"]["attributes"]["content"]+"</li>")
+  var newComment = HandlebarsTemplates['comments/show'](data.data.attributes);
+  $('#comment-list').append(newComment);
 }
