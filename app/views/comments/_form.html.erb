@@ -1,5 +1,5 @@
 <%= form_tag "/projects/#{project.id}/requests/#{request.id}/comments",
-  method: :post, class: "form-button" do %>
+  method: :post, id: "comment-form" do %>
 
   <%= label_tag 'comment[content]', "New Comment" %><br>
   <%= text_area_tag 'comment[content]', nil, size: "40x4" %>
@@ -9,5 +9,6 @@
   <input type="hidden" name="comment[project_id]" value=<%= project.id %>>
   <input type="hidden" name="comment[request_id]" value=<%= request.id %>>
 
-  <button type="submit" class="button-link button-in-site form-button">Add Comment</button>
+  <button type="submit" id="submit-comment" class="button-link button-in-site
+   form-button">Add Comment</button>
 <% end %>

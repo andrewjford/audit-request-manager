@@ -22,6 +22,11 @@ class CommentsController < ApplicationController
     redirect_to project_request_path(params[:project_id],params[:request_id])
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+    render json: @comment
+  end
+
   private
 
   def comment_params

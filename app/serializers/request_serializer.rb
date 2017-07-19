@@ -1,8 +1,6 @@
 class RequestSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :status, :request_number, :created_at,
-    :updated_at,
-    :user,
-    :comments
+    :updated_at, :user
 
   belongs_to :project
   belongs_to :user
