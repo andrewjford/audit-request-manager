@@ -47,19 +47,20 @@ example_project.requests.create(title: "Fixed Asset Rollforward", description:
 
 #create example comments
 example_project.requests.find_by(request_number: 1).comments.create(content: "See uploaded.",
-user: client)
+user: client, project_id: 1)
 example_project.requests.find_by(request_number: 1).comments.create(content: "Thank you.",
-user: manager)
+user: manager, project_id: 1)
 req1.status = "Closed"
 req1.save
 
 example_project.requests.find_by(request_number: 2).comments.create(content:
-  "Uploaded. We closed the BoA in February.", user: client)
+  "Uploaded. We closed the BoA in February.", user: client, project_id: 1)
 example_project.requests.find_by(request_number: 2).comments.create(content:
-  "Ok, thanks. We will confirm that account as well.", user: auditor)
+  "Ok, thanks. We will confirm that account as well.", user: auditor, project_id: 1)
 example_project.requests.find_by(request_number: 2).comments.create(content:
-  "Is there a bank account on here for the #1005552 TB account?", user: auditor)
-  
+  "Is there a bank account on here for the #1005552 TB account?", user: auditor,
+  project_id: 1)
+
 req2.status = "Client Submitted"
 req2.save
 req4.status = "Client Submitted"
