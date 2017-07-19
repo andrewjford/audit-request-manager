@@ -19,6 +19,8 @@ gem "rb-fsevent", "0.9.8"
 gem 'font-awesome-rails'
 # Use Pundit for authorizations
 gem 'pundit'
+# Use Active Model Serializer
+gem 'active_model_serializers', '~> 0.10.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'

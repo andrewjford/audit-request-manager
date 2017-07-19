@@ -1,5 +1,10 @@
 High
--
+- Show page that renders in jQuery with a JSON backend
+- Index page that renders via jQuery with JSON backend
+- Render has_many (comments) with JSON rendered request show page
+- JSON API create a resource and render without page refresh (comment?)
+- JSON responses must translate into JS model objects with one method on the prototype. Ex: Comment object that has method that appends to itself to DOM?
+- make request updates not refresh page
 
 Med
 -
@@ -17,6 +22,7 @@ Low
 - changed since last login
 - make request :id for path == request_count_id
 - edit comments
+- add links on user index page
 
 
 Notes
