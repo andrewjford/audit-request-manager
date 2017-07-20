@@ -1,8 +1,10 @@
 <li>
-  <div>
+  <div class="li-comment">
     <a href="/users/{{attributes.user.id}}">{{attributes.user.name}}</a>: {{attributes.content}}
 
-    <a href="/project/{{relationships.project.data.id}}/request/{{relationships.request.data.id}}/comment/{{id}}" method="delete" class="small-link float-right">delete</a>
+    <a href="/project/{{relationships.project.data.id}}/request/{{
+      relationships.request.data.id}}/comment/{{id}}" method="delete" class="small-link float-right">delete</a>
   </div>
-  <i>Posted on post_date(comment)</i>
+  <i>Posted on {{date}}
+  </i>
 </li>

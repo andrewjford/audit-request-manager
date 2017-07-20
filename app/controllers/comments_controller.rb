@@ -6,8 +6,10 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if @comment.save
-      render json: @comment, status: 201
-      # redirect_to project_request_path(params[:project_id],params[:request_id])
+      respond_to do |format|
+        # format.html {redirect_to project_request_path(params[:project_id],params[:request_id])}
+        format.json {render json: @comment, status: 201}
+      end
     else
       @request = Request.find(params[:request_id])
       flash[:error] = "New comment must have content."
