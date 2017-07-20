@@ -1,5 +1,9 @@
 <li>
+  {{#if attributes.user.is-client}}
+  <div class="li-comment-client">
+  {{else}}
   <div class="li-comment">
+  {{/if}}
     <a href="/users/{{attributes.user.id}}">{{attributes.user.name}}</a>
     <div class="inline">
       : {{attributes.content}}

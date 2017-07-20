@@ -6,7 +6,6 @@ High
 - make request updates not refresh page
 
 Med
-- properly color js comments
 - (done) JSON API create a resource and render without page refresh (comment?)
 
 Low

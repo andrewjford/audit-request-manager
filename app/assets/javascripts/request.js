@@ -4,13 +4,12 @@ $(document).on('turbolinks:load', function() {
     event.preventDefault();
     var form = $(this);
     addComment(form);
-  })
-})
+  });
+});
 
 function addComment(form){
   var formValues = form.serialize();
   $.post(form.attr('action'), formValues, showComment,"json");
-
 }
 
 function showComment(data){
