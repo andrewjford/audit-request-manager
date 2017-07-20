@@ -9,10 +9,18 @@
     <%= link_to "#{request.title} - #{request.description_trunc}",
      project_request_path(request.project, request) %>
   </td>
+
+  <td class="table-icon-small">
+    <a href=<%= project_request_path(request.project, request) %>>
+      <i class="fa fa-plus-square"></i>
+    </a>
+  </td>
+
   <td class="table-icon-row">
     <i class="fa fa-cloud-upload"> 0</i>
   </td>
   <td class="table-icon-row">
     <i class="fa fa-comments"> <%= request.comment_count %></i>
   </td>
+
 </tr>

@@ -134,6 +134,12 @@
   width: 44px;
 }
 
+.table-icon-small {
+  padding-right: 0;
+  padding-left: 0;
+  width: 24px;
+}
+
 .user-projects li {
   padding: 16px 4px;
   border: 0.25em;
