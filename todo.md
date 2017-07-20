@@ -6,7 +6,8 @@ High
 - make request updates not refresh page
 
 Med
-- clear comment box after js submit
+- properly color js comments
+- why is first add comment on request an html request?
 - (done) JSON API create a resource and render without page refresh (comment?)
 
 Low

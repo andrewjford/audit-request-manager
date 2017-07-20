@@ -1,6 +1,9 @@
 <li>
   <div class=<%= comment_color(comment) %>>
-    <%= user_name_and_link(comment.user) %>: <%= comment.content %>
+    <%= user_name_and_link(comment.user) %>
+    <div class="inline">
+      : <%= comment.content %>
+    </div>
     <%= delete_comment_link(comment) %>
   </div>
   <i>Posted on <%= post_date(comment) %></i>

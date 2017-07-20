@@ -1,6 +1,9 @@
 <li>
   <div class="li-comment">
-    <a href="/users/{{attributes.user.id}}">{{attributes.user.name}}</a>: {{attributes.content}}
+    <a href="/users/{{attributes.user.id}}">{{attributes.user.name}}</a>
+    <div class="inline">
+      : {{attributes.content}}
+    </div>
 
     <a href="/projects/{{relationships.project.data.id}}/requests/{{
       relationships.request.data.id}}/comments/{{id}}" onclick="deleteComment(this)" method="delete" class="small-link float-right">delete</a>
