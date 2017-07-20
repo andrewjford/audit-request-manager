@@ -8,7 +8,7 @@ $(function(){
 
 function addComment(form){
   var formValues = form.serialize();
-  var posting = $.post(form.attr('action'), formValues, showComment,"json");
+  $.post(form.attr('action'), formValues, showComment,"json");
 
 }
 
@@ -21,4 +21,20 @@ function showComment(data){
   data["data"]["date"] = outDate;
   var newComment = HandlebarsTemplates['comments/show'](data.data);
   $('#comment-list').append(newComment);
+}
+
+function deleteComment(element){
+  event.preventDefault();
+  var commentElement = element.parentElement.parentElement;
+  // delete from db
+  $.ajax({
+    url: element.attributes.href.value,
+    type: 'delete',
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    dataType: "json",
+    success: function(resp){
+      // remove div from dom
+      commentElement.remove();
+    }
+  })
 }

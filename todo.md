@@ -6,7 +6,7 @@ High
 - make request updates not refresh page
 
 Med
--
+- clear comment box after js submit
 - (done) JSON API create a resource and render without page refresh (comment?)
 
 Low
