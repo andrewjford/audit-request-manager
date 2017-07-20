@@ -7,7 +7,6 @@ High
 
 Med
 - properly color js comments
-- why is first add comment on request an html request?
 - (done) JSON API create a resource and render without page refresh (comment?)
 
 Low

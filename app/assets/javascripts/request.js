@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   //add listeners
   $('#comment-form').submit(function(){
     event.preventDefault();
@@ -8,7 +8,6 @@ $(function(){
 })
 
 function addComment(form){
-  debugger;
   var formValues = form.serialize();
   $.post(form.attr('action'), formValues, showComment,"json");
 
