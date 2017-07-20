@@ -7,7 +7,7 @@ module ApplicationHelper
 
   def users_link
     if current_user.admin?
-      content_tag(:li, link_to("Users", users_path))
+      content_tag(:li, link_to("Users", users_path, id: "users-link"))
     end
   end
 end
