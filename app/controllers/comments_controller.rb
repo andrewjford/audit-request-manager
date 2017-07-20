@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       respond_to do |format|
-        # format.html {redirect_to project_request_path(params[:project_id],params[:request_id])}
+        format.html {redirect_to project_request_path(params[:project_id],params[:request_id])}
         format.json {render json: @comment, status: 201}
       end
     else

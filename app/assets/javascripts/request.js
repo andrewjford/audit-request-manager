@@ -8,11 +8,8 @@ $(function(){
 
 function addComment(form){
   var formValues = form.serialize();
-  var posting = $.post(form.attr('action'), formValues);
+  var posting = $.post(form.attr('action'), formValues, showComment,"json");
 
-  posting.done(function(data){
-    showComment(data);
-  })
 }
 
 function showComment(data){
