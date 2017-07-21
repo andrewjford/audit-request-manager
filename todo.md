@@ -5,10 +5,15 @@ High
 - JSON responses must translate into JS model objects with one method on the prototype. Ex: Comment object that has method that appends to itself to DOM?
 - make request updates not refresh page
 
+- expand js model
+- review json gets/posts
+
 Med
 - (done) JSON API create a resource and render without page refresh (comment?)
+- js request mixes jquery and javascript too much, stick to one
 
 Low
+- add comment dates to request expanded
 - bug where user gets added twice to project if the project failed to send the first time
 - tests
 - fix views to not break when a user is deleted
