@@ -60,6 +60,15 @@
   line-height: 0;
 }
 
+.expanded {
+  border-color: #3A96CE;
+  border-style: solid;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 4px;
+  border-width: 2px;
+}
+
 .field {
   margin-bottom: 10px;
 }

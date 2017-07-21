@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
     event.preventDefault();
 
     //get div where we will enter new info
-    var targetElement = this.parentElement.previousElementSibling
+    var targetElement = $(this).parent().prev().children(".expand-content");
 
     //conditional for expand toggling
     if(this.dataset.expanded === "false"){
@@ -30,9 +30,9 @@ class RequestResponse {
     this.response["data"]["date"] = outDate;
   }
 
-  render(element) {
+  render(targetElement) {
     //takes json 'data' and puts into div 'targetElement'
-    element.innerHTML = HandlebarsTemplates['requests/show'](this.response.data);
+    targetElement.html(HandlebarsTemplates['requests/show'](this.response.data));
   }
 }
 
@@ -49,16 +49,18 @@ function getRequest(element, targetElement){
 
     // flip toggle switch
     element.attr('data-expanded', "true");
+    targetElement.addClass("expanded");
   }, "json");
 }
 
 function shrinkRequest(element, targetElement){
   //reduce targetElement to origin state
-  targetElement.innerHTML = targetElement.children[0].innerHTML;
+  targetElement.html("");
 
   //change expand icon back to plus
   element.html('<i class="fa fa-plus-square"></i>');
 
   //flip toggle switch
   element.attr('data-expanded','false');
+  targetElement.removeClass("expanded");
 }
