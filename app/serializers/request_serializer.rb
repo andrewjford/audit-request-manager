@@ -25,7 +25,7 @@ class RequestSerializer < ActiveModel::Serializer
         user: {
           id: comment.user.id,
           name: comment.user.name,
-          role: comment.user.role
+          is_client: comment.user.client?
         }
       }
     end

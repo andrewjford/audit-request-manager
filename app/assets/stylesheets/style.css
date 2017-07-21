@@ -94,6 +94,10 @@
   vertical-align: top;
 }
 
+.project-table-heading {
+  margin-top: 0;
+}
+
 .request-comments i {
   font-size: 0.9em;
   margin-left: 8px;
@@ -275,6 +279,10 @@ ul {
 .request-info a {
   width: 100%;
   display: block;
+}
+
+.request-info a.inline {
+  display: inline;
 }
 
 .status-open {
