@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function() {
       getRequest($(this), infoDiv);
     }
     else {
-      shrinkRequest($(this, infoDiv))
+      shrinkRequest($(this), infoDiv)
     }
   });
 });
@@ -16,16 +16,19 @@ $(document).on('turbolinks:load', function() {
 function getRequest(element, infoDiv){
   $.get(element.attr('href'), function(){}, "json")
   .done(function(data){
+    element.html('<i class="fa fa-minus-square"></i>');
     renderRequest(data, infoDiv);
   });
 }
 
 function renderRequest(data,infoDiv){
-  debugger;
   var showRequest = HandlebarsTemplates['requests/show'](data.data);
   infoDiv.innerHTML = showRequest;
+
 }
 
 function shrinkRequest(element, infoDiv){
-  infoDiv.innerHTML = ""
+  infoDiv.innerHTML = infoDiv.children[0].innerHTML;
+  element.html('<i class="fa fa-plus-square"></i>');
+  element.attr('data-expanded','false');
 }
