@@ -1,17 +1,12 @@
 High
 - Show page that renders in jQuery with a JSON backend
 - Index page that renders via jQuery with JSON backend
-- Render has_many (comments) with JSON rendered request show page
-- JSON responses must translate into JS model objects with one method on the prototype. Ex: Comment object that has method that appends to itself to DOM?
 - make request updates not refresh page
 
-- expand js model
-- review json gets/posts
-
 Med
-- (done) JSON API create a resource and render without page refresh (comment?)
 - js request mixes jquery and javascript too much, stick to one
 - order comments by date
+ - why is serializer called twice?
 
 Low
 - change delete comment in js to page listener instead of attached onclick? or add onclick to html form submittal.
@@ -32,6 +27,7 @@ Low
 
 
 Notes
+- why are my activerecord queries not returning in order by id? ex: request.comments
 - is it best practice to have hidden inputs in form, or add inputs in through controller?
 - is it better to use ActiveRecord queries to scope index or just do it manually
 in the controller with activerecord model associations?

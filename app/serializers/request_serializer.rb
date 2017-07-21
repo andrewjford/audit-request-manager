@@ -16,7 +16,7 @@ class RequestSerializer < ActiveModel::Serializer
   end
 
   def comments
-    object.comments.map do |comment|
+    out = object.comments.map do |comment|
       {
         id: comment.id,
         content: comment.content,
@@ -29,5 +29,6 @@ class RequestSerializer < ActiveModel::Serializer
         }
       }
     end
+    
   end
 end
