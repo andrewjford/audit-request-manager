@@ -1,21 +1,3 @@
-$(document).on('turbolinks:load', function() {
-  //add listeners
-  $('.js-get-request').on('click',function(){
-    event.preventDefault();
-
-    //get div where we will enter new info
-    var targetElement = $(this).parent().prev().children(".expand-content");
-
-    //conditional for expand toggling
-    if(this.dataset.expanded === "false"){
-      getRequest($(this), targetElement);
-    }
-    else {
-      shrinkRequest($(this), targetElement)
-    }
-  });
-});
-
 class RequestResponse {
   constructor(response) {
     this.response = response;
@@ -36,6 +18,24 @@ class RequestResponse {
   }
 }
 
+//add listeners
+$(document).on('turbolinks:load', function() {
+  $('.js-get-request').on('click',function(){
+    event.preventDefault();
+
+    //get div where we will enter new info
+    var targetElement = $(this).parent().prev().children(".expand-content");
+
+    //conditional for expand toggling
+    if(this.dataset.expanded === "false"){
+      getRequest($(this), targetElement);
+    }
+    else {
+      shrinkRequest($(this), targetElement)
+    }
+  });
+});
+
 function getRequest(element, targetElement){
   $.get(element.attr('href'), function(data){
     //change expand icon to minus
@@ -49,7 +49,7 @@ function getRequest(element, targetElement){
 
     // flip toggle switch
     element.attr('data-expanded', "true");
-    targetElement.addClass("expanded");
+    // targetElement.addClass("expanded"); // for css on expanded section
   }, "json");
 }
 
@@ -62,5 +62,5 @@ function shrinkRequest(element, targetElement){
 
   //flip toggle switch
   element.attr('data-expanded','false');
-  targetElement.removeClass("expanded");
+  // targetElement.removeClass("expanded");
 }

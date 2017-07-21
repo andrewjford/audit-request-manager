@@ -3,8 +3,10 @@
 <p>Last Updated: {{date}}</p>
 
 <p>Comments: </p>
-<ul>
+<div class="request-comments">
+  <ul>
   {{#each relationships.comments.data}}
     {{> comments/_commentli parameter=relationships.comments.data}}
   {{/each}}
-</ul>
+  </ul>
+</div>
