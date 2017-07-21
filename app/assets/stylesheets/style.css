@@ -90,6 +90,10 @@
   border-radius: 4px;
 }
 
+.project-table td {
+  vertical-align: top;
+}
+
 .request-comments i {
   font-size: 0.9em;
   margin-left: 8px;
