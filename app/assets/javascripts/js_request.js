@@ -8,8 +8,12 @@ $(document).on('turbolinks:load', function() {
 
     //conditional for expand toggling
     if(this.dataset.expanded === "false"){
+      //old code
       this.setAttribute('data-expanded', "true")
       getRequest($(this), infoDiv);
+
+      //new code
+
     }
     else {
       shrinkRequest($(this), infoDiv)
@@ -17,22 +21,50 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
+
+// New code w/objects
+function RequestResponse(response){
+  this.response = response;
+}
+
+RequestResponse.prototype.updateDate = function() {
+  var date = new Date(this.response["data"]["attributes"]["updated-at"]);
+  var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
+  minute: 'numeric', timeZone: 'America/New_York'};
+  var outDate = date.toLocaleDateString('en-US',options);
+
+  //add formatted date to json
+  this.response["data"]["date"] = outDate;
+}
+
+RequestResponse.prototype.render = function(element) {
+  //takes json 'data' and puts into div 'infoDiv'
+  element.innerHTML = HandlebarsTemplates['requests/show'](this.response.data);
+}
+
+// Old format is below
+
 function getRequest(element, infoDiv){
   $.get(element.attr('href'), function(){}, "json")
   .done(function(data){
     //change expand icon to minus
     element.html('<i class="fa fa-minus-square"></i>');
 
-    //format json date
-    var date = new Date(data["data"]["attributes"]["updated-at"]);
-    var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
-    minute: 'numeric', timeZone: 'America/New_York'};
-    var outDate = date.toLocaleDateString('en-US',options);
+    var response = new RequestResponse(data);
+    response.updateDate();
+    response.render(infoDiv);
 
-    //add formatted date to json
-    data["data"]["date"] = outDate;
-
-    renderRequest(data, infoDiv);
+    //old code:
+    // //format json date
+    // var date = new Date(data["data"]["attributes"]["updated-at"]);
+    // var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
+    // minute: 'numeric', timeZone: 'America/New_York'};
+    // var outDate = date.toLocaleDateString('en-US',options);
+    //
+    // //add formatted date to json
+    // data["data"]["date"] = outDate;
+    //
+    // renderRequest(data, infoDiv);
   });
 }
 
