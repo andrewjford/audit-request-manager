@@ -1,0 +1,10 @@
+<h1>User Management</h1>
+
+<ul>
+  {{#each this}}
+    <li>
+      {{attributes.name}} - {{attributes.email}} 
+      <a href="/users/{{id}}" data-method="delete" data-confirm="Are you sure?">delete user</a>
+    </li>
+  {{/each}}
+</ul>

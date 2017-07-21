@@ -18,6 +18,6 @@
 
 //= require menu
 //= require jquery-3.2.1.min.js
-//= require comments
 //= require users
-//= require requests
+//= require js_comment
+//= require js_request

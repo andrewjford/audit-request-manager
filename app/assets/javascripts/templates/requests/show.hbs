@@ -1,0 +1,8 @@
+<p>{{attributes.title}} - {{attributes.description}}</p>
+
+<p>Comments: </p>
+<ul>
+  {{#each relationships.comments.data}}
+    {{> comments/_commentli parameter=relationships.comments.data}}
+  {{/each}}
+</ul>

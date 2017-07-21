@@ -1,0 +1,17 @@
+<li>
+  {{#if attributes.user.is-client}}
+  <div class="li-comment-client">
+  {{else}}
+  <div class="li-comment">
+  {{/if}}
+    <a href="/users/{{attributes.user.id}}">{{attributes.user.name}}</a>
+    <div class="inline">
+      : {{attributes.content}}
+    </div>
+
+    <a href="/projects/{{relationships.project.data.id}}/requests/{{
+      relationships.request.data.id}}/comments/{{id}}" onclick="deleteComment(this)" method="delete" class="small-link float-right">delete</a>
+  </div>
+  <i>Posted on {{date}}
+  </i>
+</li>
