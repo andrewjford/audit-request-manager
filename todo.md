@@ -11,8 +11,10 @@ High
 Med
 - (done) JSON API create a resource and render without page refresh (comment?)
 - js request mixes jquery and javascript too much, stick to one
+- order comments by date
 
 Low
+- change delete comment in js to page listener instead of attached onclick? or add onclick to html form submittal.
 - add comment dates to request expanded
 - bug where user gets added twice to project if the project failed to send the first time
 - tests

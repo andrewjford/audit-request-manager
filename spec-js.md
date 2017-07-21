@@ -3,7 +3,6 @@
 Specs:
 - [x] Use jQuery for implementing new requirements
 - [x] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
-  - request show on project page - does this count?
   - does the json show need to display as much as the html?
 - [x] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
   - Users index page (for admins only)
@@ -15,7 +14,8 @@ Specs:
   - Comments on request show page
 - [ ] Translate JSON responses into js model objects.
   - just the responses?
-  -
+  - does the jquery auto convert response
+  - what adapter serializer
 - [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
 
 Confirm

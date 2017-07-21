@@ -1,6 +1,7 @@
 class RequestResponse {
   constructor(response) {
     this.response = response;
+    this.comments = this.response.data.relationships.comments.data;
   }
   updateDate() {
     var date = new Date(this.response["data"]["attributes"]["updated-at"]);
@@ -12,9 +13,21 @@ class RequestResponse {
     this.response["data"]["date"] = outDate;
   }
 
-  render(targetElement) {
-    //takes json 'data' and puts into div 'targetElement'
-    targetElement.html(HandlebarsTemplates['requests/show'](this.response.data));
+  formatCommentDates() {
+    for(var i=0;i<this.comments.length;i++){
+
+      var date = new Date(this.comments[i]["created-at"]);
+      var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
+      minute: 'numeric', timeZone: 'America/New_York'};
+      var outDate = date.toLocaleDateString('en-US',options);
+      
+      this.comments[i]["created-at-formatted"] = outDate;
+    }
+  }
+
+  render(targetElement, template) {
+    //takes json and puts into div 'targetElement' using template parameter
+    targetElement.html(template(this.response.data));
   }
 }
 
@@ -43,9 +56,10 @@ function getRequest(element, targetElement){
 
     var response = new RequestResponse(data);
     response.updateDate();
+    response.formatCommentDates();
 
     //render new json
-    response.render(targetElement);
+    response.render(targetElement, HandlebarsTemplates['requests/show']);
 
     // flip toggle switch
     element.attr('data-expanded', "true");
