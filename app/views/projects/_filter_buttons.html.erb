@@ -1,8 +1,8 @@
 <%= link_to 'All Requests', "/projects/#{@project.id}",
-  class:"button-link button-in-site" %>
+  class:"button-link button-in-site", id: "filter-all" %>
 <%= link_to 'Open Requests', "/projects/#{@project.id}/status/open",
-  class:"button-link button-in-site" %>
+  class:"button-link button-in-site", id: "filter-open" %>
 <%= link_to 'Client Submitted', "/projects/#{@project.id}/status/client_submitted",
-  class:"button-link button-in-site" %>
+  class:"button-link button-in-site", id: "filter-submitted" %>
 <%= link_to 'Closed Requests', "/projects/#{@project.id}/status/closed",
-  class:"button-link button-in-site" %>
+  class:"button-link button-in-site", id: "filter-closed" %>

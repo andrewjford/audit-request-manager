@@ -34,6 +34,8 @@ class RequestResponse {
 
 //add listeners
 $(document).on('turbolinks:load', function() {
+
+  // request expand button (plus/minus)
   $('.js-get-request').on('click',function(){
     event.preventDefault();
 
@@ -49,7 +51,44 @@ $(document).on('turbolinks:load', function() {
       shrinkRequest($(this), targetElement)
     }
   });
+
+  // all filter button
+  $('#filter-all').on('click', function(){
+    event.preventDefault();
+
+    $('tr').removeClass('hidden');
+  });
+
+  // open filter button
+  $('#filter-open').on('click', function(){
+    event.preventDefault();
+    filterRequests('Open');
+  });
+
+  // submitted filter button
+  $('#filter-submitted').on('click', function(){
+    event.preventDefault();
+    filterRequests('Client Submitted');
+  });
+
+  // closed filter button
+  $('#filter-closed').on('click', function(){
+    event.preventDefault();
+    filterRequests('Closed');
+  });
+
 });
+
+function filterRequests(status){
+  $('tr').each(function(){
+    if($(':nth-child(2)', this).text() === status){
+      $(this).removeClass('hidden');
+    }
+    else{
+      $(this).addClass('hidden');
+    }
+  });
+}
 
 function getRequest(element, targetElement){
   $.get(element.attr('href'), function(data){
