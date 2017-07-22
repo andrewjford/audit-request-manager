@@ -1,0 +1,20 @@
+<a href="/projects/{{relationships.project.data.id}}/requests/{{id}}">
+ {{attributes.title}} - {{attributes.description}}
+</a>
+
+<p>Last Updated: {{date}}</p>
+
+<p>Comments: </p>
+<div class="request-comments">
+  <ul>
+  {{#each attributes.comments}}
+    {{> comments/_commentli parameter=attributes.comments}}
+  {{/each}}
+  </ul>
+</div>
+
+<div class="hidden">
+  <a href="/projects/{{relationships.project.data.id}}/requests/{{id}}">
+   {{attributes.title}} - {{attributes.description-trunc}}
+  </a>
+</div>

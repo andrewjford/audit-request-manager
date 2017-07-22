@@ -1,0 +1,11 @@
+<li>
+  {{#if user.is-client}}
+  <div class="li-comment-client">
+  {{else}}
+  <div class="li-comment">
+  {{/if}}
+    <a class="inline" href="/users/{{user.id}}">{{user.name}}</a>
+      : {{content}}
+  </div>
+  <i>Posted on {{created-at-formatted}}</i>
+</li>
