@@ -2,6 +2,7 @@ High
 - Show page that renders in jQuery with a JSON backend
 - Index page that renders via jQuery with JSON backend
 - make request updates not refresh page
+- expand request should show entire descriptions/title
 
 Med
 - need to display whole request content in expand because of long posts

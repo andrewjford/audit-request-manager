@@ -2,7 +2,7 @@ class RequestResponse {
   constructor(response) {
     this.response = response;
     this.comments = this.response.data.attributes.comments;
-    
+
   }
   updateDate() {
     var date = new Date(this.response["data"]["attributes"]["updated-at"]);
@@ -38,7 +38,8 @@ $(document).on('turbolinks:load', function() {
     event.preventDefault();
 
     //get div where we will enter new info
-    var targetElement = $(this).parent().prev().children(".expand-content");
+    // var targetElement = $(this).parent().prev().children(".expand-content");
+    var targetElement = $(this).parent().prev();
 
     //conditional for expand toggling
     if(this.dataset.expanded === "false"){
@@ -70,7 +71,7 @@ function getRequest(element, targetElement){
 
 function shrinkRequest(element, targetElement){
   //reduce targetElement to origin state
-  targetElement.html("");
+  targetElement.html(targetElement.children(".hidden").html());
 
   //change expand icon back to plus
   element.html('<i class="fa fa-plus-square"></i>');

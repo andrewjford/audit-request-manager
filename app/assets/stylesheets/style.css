@@ -81,6 +81,10 @@
   display: inline;
 }
 
+.hidden {
+  display: none;
+}
+
 .inline {
   display: inline-block;
 }

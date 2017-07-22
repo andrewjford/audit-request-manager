@@ -5,6 +5,12 @@ class RequestsController < ApplicationController
     @project = Project.find(params[:project_id])
     authorize @project, :show?
     @requests = @project.filtered_requests(params[:status_code])
+
+    respond_to do |format|
+      format.html {render :template => '/projects/show'}
+      format.json {render json: @request}
+    end
+
   end
 
   def new

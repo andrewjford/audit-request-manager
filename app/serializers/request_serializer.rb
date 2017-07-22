@@ -1,6 +1,6 @@
 class RequestSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :status, :request_number, :created_at,
-    :updated_at, :user, :comments
+  attributes :id, :title, :description, :description_trunc, :status,
+  :request_number, :created_at, :updated_at, :user, :comments
 
   belongs_to :project
   belongs_to :user
@@ -29,6 +29,9 @@ class RequestSerializer < ActiveModel::Serializer
         }
       }
     end
+  end
 
+  def description_trunc
+    object.description_trunc
   end
 end
