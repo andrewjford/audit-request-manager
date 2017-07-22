@@ -6,6 +6,8 @@ A Rails web app for facilitating audit file transfers and requests. Currently ho
 
 This is a Rails web app that handles audit requests between auditors and auditees. Users, depending on their access level, can create projects, add requests to projects, comment on requests, and upload files related to requests*. In the current version, file uploads are disabled.
 
+Demo videos can be found at https://vimeo.com/224264373 and https://vimeo.com/226583640.
+
 ## Details
 
 Users can Sign Up directly with the site, or through Facebook or GitHub accounts. User access is restricted by the account's access level which defaults to Manager in the current version. Manager is the highest available access level. One step down is the Auditor level. The most restricted level is Client. This demo version allows the user to change their own access level in the profile edit page.
