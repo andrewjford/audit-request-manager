@@ -1,7 +1,8 @@
 class RequestResponse {
   constructor(response) {
     this.response = response;
-    this.comments = this.response.data.relationships.comments.data;
+    this.comments = this.response.data.attributes.comments;
+    
   }
   updateDate() {
     var date = new Date(this.response["data"]["attributes"]["updated-at"]);
@@ -20,7 +21,7 @@ class RequestResponse {
       var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
       minute: 'numeric', timeZone: 'America/New_York'};
       var outDate = date.toLocaleDateString('en-US',options);
-      
+
       this.comments[i]["created-at-formatted"] = outDate;
     }
   }

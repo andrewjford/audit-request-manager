@@ -17,6 +17,10 @@ class ProjectPolicy < ApplicationPolicy
     user.admin? || user.manager? && record.users.include?(user)
   end
 
+  def show?
+    user.admin? || record.users.include?(user)
+  end
+
   def create?
     user.admin? || user.manager?
   end

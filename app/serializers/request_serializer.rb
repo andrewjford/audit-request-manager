@@ -1,10 +1,10 @@
 class RequestSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :status, :request_number, :created_at,
-    :updated_at, :user
+    :updated_at, :user, :comments
 
   belongs_to :project
   belongs_to :user
-  has_many :comments
+  # has_many :comments
 
   def user
     {
@@ -29,6 +29,6 @@ class RequestSerializer < ActiveModel::Serializer
         }
       }
     end
-    
+
   end
 end

@@ -7,6 +7,8 @@ class Project < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
 
+  default_scope {order(created_at: :asc)}
+
   def user_attributes=(user_attributes)
     user_attributes.values.each do |user_attribute|
       user = User.find_by(email: user_attribute[:email])

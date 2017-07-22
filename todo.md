@@ -4,9 +4,7 @@ High
 - make request updates not refresh page
 
 Med
-- js request mixes jquery and javascript too much, stick to one
-- order comments by date
- - why is serializer called twice?
+- need to display whole request content in expand because of long posts
 
 Low
 - change delete comment in js to page listener instead of attached onclick? or add onclick to html form submittal.
@@ -31,3 +29,5 @@ Notes
 - is it best practice to have hidden inputs in form, or add inputs in through controller?
 - is it better to use ActiveRecord queries to scope index or just do it manually
 in the controller with activerecord model associations?
+
+Anyone ever run into an issue with activerecord not ordering collections properly? For instance if you call Comment.all and activerecord returns a collection that is not ordered by id. I think it relates to deleted records, because newly added comments were being inserted into the slots of deleted comments.

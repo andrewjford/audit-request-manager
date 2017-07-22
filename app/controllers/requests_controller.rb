@@ -1,6 +1,12 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @project = Project.find(params[:project_id])
+    authorize @project, :show?
+    @requests = @project.filtered_requests(params[:status_code])
+  end
+
   def new
     #need both request and project since form is nested resource
     @request = Request.new
