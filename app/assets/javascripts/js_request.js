@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function() {
 
     //get div where we will enter new info
     // var targetElement = $(this).parent().prev().children(".expand-content");
-    var targetElement = $(this).parent().prev();
+    var targetElement = $(this).parent().prev().children();
 
     //conditional for expand toggling
     if(this.dataset.expanded === "false"){
@@ -79,6 +79,8 @@ $(document).on('turbolinks:load', function() {
 
 });
 
+// Other functions
+
 function filterRequests(status){
   $('tr').each(function(){
     if($(':nth-child(2)', this).text() === status){
@@ -104,7 +106,8 @@ function getRequest(element, targetElement){
 
     // flip toggle switch
     element.attr('data-expanded', "true");
-    // targetElement.addClass("expanded"); // for css on expanded section
+    // for transition
+    targetElement.addClass('expand');
   }, "json");
 }
 
@@ -117,5 +120,6 @@ function shrinkRequest(element, targetElement){
 
   //flip toggle switch
   element.attr('data-expanded','false');
-  // targetElement.removeClass("expanded");
+  // for transition
+  targetElement.removeClass('expand');
 }

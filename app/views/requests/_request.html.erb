@@ -6,9 +6,10 @@
   <%= request_status_td(request) %>
 
   <td class="request-info">
-    <%= link_to "#{request.title} - #{request.description_trunc}",
-     project_request_path(request.project, request) %>
-     <div class="expand-content"></div>
+    <div class="expand-content">
+      <%= link_to "#{request.title} - #{request.description_trunc}",
+       project_request_path(request.project, request) %>
+    </div>
   </td>
 
   <td class="table-icon-small">

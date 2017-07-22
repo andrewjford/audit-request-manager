@@ -289,6 +289,17 @@ ul {
   border-style: solid;
 }
 
+div.expand-content {
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 1.5s;
+}
+
+div.expand-content.expand {
+  max-height: 2000px;
+  overflow: hidden;
+}
+
 .request-info a {
   width: 100%;
   display: block;

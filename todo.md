@@ -1,10 +1,6 @@
 High
-- Show page that renders in jQuery with a JSON backend
-- Index page that renders via jQuery with JSON backend
-- make request updates not refresh page
 
 Med
-- need to display whole request content in expand because of long posts
 
 Low
 - change delete comment in js to page listener instead of attached onclick? or add onclick to html form submittal.
@@ -30,4 +26,4 @@ Notes
 - is it better to use ActiveRecord queries to scope index or just do it manually
 in the controller with activerecord model associations?
 
-Anyone ever run into an issue with activerecord not ordering collections properly? For instance if you call Comment.all and activerecord returns a collection that is not ordered by id. I think it relates to deleted records, because newly added comments were being inserted into the slots of deleted comments.
+Anyone ever run into an issue with activerecord not ordering collections properly? For instance if you call Comment.all and activerecord returns a collection that is not ordered by id.
