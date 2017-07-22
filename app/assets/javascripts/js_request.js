@@ -1,36 +1,35 @@
-class RequestResponse {
-  constructor(response) {
-    this.response = response;
-    this.comments = this.response.data.attributes.comments;
+function RequestResponse(response) {
+  this.response = response;
+  this.comments = this.response.data.attributes.comments;
+}
 
-  }
-  updateDate() {
-    var date = new Date(this.response["data"]["attributes"]["updated-at"]);
+RequestResponse.prototype.updateDate = function() {
+  var date = new Date(this.response["data"]["attributes"]["updated-at"]);
+  var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
+  minute: 'numeric', timeZone: 'America/New_York'};
+  var outDate = date.toLocaleDateString('en-US',options);
+
+  //add formatted date to json
+  this.response["data"]["date"] = outDate;
+}
+
+RequestResponse.prototype.formatCommentDates = function() {
+  for(var i=0;i<this.comments.length;i++){
+
+    var date = new Date(this.comments[i]["created-at"]);
     var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
     minute: 'numeric', timeZone: 'America/New_York'};
     var outDate = date.toLocaleDateString('en-US',options);
 
-    //add formatted date to json
-    this.response["data"]["date"] = outDate;
-  }
-
-  formatCommentDates() {
-    for(var i=0;i<this.comments.length;i++){
-
-      var date = new Date(this.comments[i]["created-at"]);
-      var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
-      minute: 'numeric', timeZone: 'America/New_York'};
-      var outDate = date.toLocaleDateString('en-US',options);
-
-      this.comments[i]["created-at-formatted"] = outDate;
-    }
-  }
-
-  render(targetElement, template) {
-    //takes json and puts into div 'targetElement' using template parameter
-    targetElement.html(template(this.response.data));
+    this.comments[i]["created-at-formatted"] = outDate;
   }
 }
+
+RequestResponse.prototype.render = function(targetElement, template) {
+  //takes json and puts into div 'targetElement' using template parameter
+  targetElement.html(template(this.response.data));
+}
+
 
 //add listeners
 $(document).on('turbolinks:load', function() {
