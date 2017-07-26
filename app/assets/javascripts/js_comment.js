@@ -26,6 +26,12 @@ $(document).on('turbolinks:load', function() {
     var form = $(this);
     addComment(form);
   });
+
+  $('.delete-comment').on('click', function(event) {
+    event.preventDefault();
+    deleteComment(this);
+    return false;
+  })
 });
 
 function addComment(form){

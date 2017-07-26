@@ -9,7 +9,7 @@ module CommentsHelper
       link_to "delete",
         project_request_comment_path(comment.request.project, comment.request, comment),
         method: :delete,
-        class: "small-link float-right"
+        class: "small-link float-right delete-comment"
     end
   end
 

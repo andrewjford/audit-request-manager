@@ -3,11 +3,11 @@ High
 Med
 
 Low
-- change delete comment in js to page listener instead of attached onclick? or add onclick to html form submittal.
-- add comment dates to request expanded
+- make open/close/upload buttons function with JS
+- delete button on comments will not work without JS due to underlying jQuery dependency i think
 - bug where user gets added twice to project if the project failed to send the first time
 - tests
-- fix views to not break when a user is deleted
+- review views after a user is deleted
 - Summary of outstanding items
 - all info table mode for exporting
 - give admin UI to set role levels
@@ -26,4 +26,4 @@ Notes
 - is it better to use ActiveRecord queries to scope index or just do it manually
 in the controller with activerecord model associations?
 
-Anyone ever run into an issue with activerecord not ordering collections properly? For instance if you call Comment.all and activerecord returns a collection that is not ordered by id.
+Issue with activerecord not ordering collections properly? For instance if you call Comment.all and activerecord returns a collection that is not ordered by id.
