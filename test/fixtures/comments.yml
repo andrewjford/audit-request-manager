@@ -3,9 +3,9 @@
 one:
   content: MyString
   user_id: 1
-  post_id: 1
+  request_id: 1
 
 two:
   content: MyString
   user_id: 1
-  post_id: 1
+  request_id: 1
