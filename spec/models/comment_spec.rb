@@ -3,19 +3,9 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
 
   before do
-    @user = User.create(
-      email: "a@a.a",
-      name: "Abe",
-      password: "asdfasdf",
-      organization: Organization.new(name: "testCorp")
-    )
-    @project = Project.create(title: "The Big Jambroni")
-    @request = @project.requests.create(
-    title: "Give us the money Lebowski",
-    description: "Where's the money Lebowski",
-    user_id: @user.id,
-    request_number: 1
-    )
+    @user = FactoryGirl.create(:user)
+    @project = FactoryGirl.create(:project)
+    @request = FactoryGirl.create(:request)
     @comment = Comment.new(
       content: "howdy",
       user_id: @user.id,
