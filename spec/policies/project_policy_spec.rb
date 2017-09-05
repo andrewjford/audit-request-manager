@@ -41,7 +41,20 @@ describe ProjectPolicy do
 
       expect(subject).to permit(@user,
         Project.create(title: "Test1", user_ids: [@user.id]))
+    end
+  end
 
+  permissions :destroy? do
+    it "denies if not admin" do
+      expect(subject).not_to permit(User.new(role: 1), Project.new())
+      expect(subject).not_to permit(User.new(role: 2), Project.new())
+      expect(subject).not_to permit(User.new(role: 3), Project.new())
+    end
+
+    it "grants access if admin" do
+      @user = FactoryGirl.create(:user, role: 0)
+
+      expect(subject).to permit(@user, Project.new())
     end
   end
 end
