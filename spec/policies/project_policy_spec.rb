@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pundit/rspec'
 
 describe ProjectPolicy do
   subject { ProjectPolicy }
@@ -11,7 +10,7 @@ describe ProjectPolicy do
     end
 
     it "grants access if user is a manager" do
-      expect(subject).to permit(FactoryGirl.create(:user), Project.create(title: "Test1"))
+      expect(subject).to permit(FactoryGirl.create(:user), Project.new())
     end
   end
 
